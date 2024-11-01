@@ -7,7 +7,7 @@ import re
 TARGET_GROUP_NAME = "测试"
 
 # 更新后的正则表达式模式，适配多行文本
-MESSAGE_PATTERN = r"(\d{6}-\d{4}).*?客户需求.*?\+ (\w+) 接单"
+MESSAGE_PATTERN = r"(\d{6}-\d{4}).*?XX.*?\+ (\w+) XX"
 
 @itchat.msg_register(itchat.content.TEXT, isGroupChat=True)
 def group_text_reply(msg):
@@ -22,7 +22,7 @@ def group_text_reply(msg):
             print(f">>>>>>>>Match found! Order ID: {order_id}, Account Name: {account_id}")
 
             # 构造发送的消息内容
-            order_message = f"接单 {order_id}"
+            order_message = f"JDD {order_id}"
 
             # 查找用户并发送消息（实际发送逻辑已注释）
             user = get_user_by_id(account_id)
@@ -45,7 +45,7 @@ def message_match(msg_text):
     match = re.search(MESSAGE_PATTERN, msg_text)
     if match:
         order_id = match.group(1).strip()  # 提取动态编号
-        account_name = match.group(2).strip()  # 提取接单人账号
+        account_name = match.group(2).strip()  # 提取JDD人账号
         print(f"Match found! Order ID: {order_id}, Account Name: {account_name}")
         return order_id, account_name
     else:
@@ -55,8 +55,8 @@ def message_match(msg_text):
 
 def get_user_by_id(account_id):
     # 通过微信ID查找用户
-    if account_id == 'wxid_m6zofxt0b1do22':
-        return get_user_by_nike('AI源')
+    if account_id == 'XXX':
+        return get_user_by_nike('ZXXX')
 
 
 def get_user_by_nike(nike_name):
