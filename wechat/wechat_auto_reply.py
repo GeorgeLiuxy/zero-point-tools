@@ -1,76 +1,70 @@
-import applescript
-import time
-import schedule
-import subprocess
+# please use Python 3.8.* 版本
+import itchat
+import html
+import re
 
-# 指定的微信群名称
-GROUP_NAME = "测试"
-# 自动回复的内容
-REPLY_MESSAGE = "自动回复：收到您的消息！"
+# 定义要监听的群聊名称
+TARGET_GROUP_NAME = "测试"
 
-def open_group_chat():
-    """打开微信指定的群聊窗口"""
-    script = f'''
-    tell application "WeChat"
-        activate
-        delay 1
-        tell application "System Events"
-            keystroke "F" using {{command down, shift down}}
-            delay 0.5
-            keystroke "{GROUP_NAME}"
-            delay 1
-            keystroke return
-            delay 1
-            keystroke "A" using {{command down}}
-            delay 0.5
-            keystroke "C" using {{command down}}
-            delay 0.5
-        end tell
-    end tell
-    '''
-    print("运行 AppleScript 以打开微信群并复制消息内容...")
-    applescript.run(script)
+# 更新后的正则表达式模式，适配多行文本
+MESSAGE_PATTERN = r"(\d{6}-\d{4}).*?客户需求.*?\+ (\w+) 接单"
 
-def get_latest_messages():
-    """从剪贴板获取最近的消息内容"""
-    result = subprocess.run(['pbpaste'], stdout=subprocess.PIPE)
-    messages = result.stdout.decode('utf-8')
-    print("获取到的消息内容为：", messages)
-    return messages
+@itchat.msg_register(itchat.content.TEXT, isGroupChat=True)
+def group_text_reply(msg):
+    # 检查消息是否来自目标群聊
+    if msg['User']['NickName'] == TARGET_GROUP_NAME:
+        # 匹配消息内容
+        match_result = message_match(msg.text)
 
-def send_reply():
-    """发送自动回复消息"""
-    script = f'''
-    tell application "WeChat"
-        activate
-        delay 1
-        tell application "System Events"
-            keystroke "{REPLY_MESSAGE}"
-            delay 0.5
-            keystroke return
-        end tell
-    end tell
-    '''
-    print("发送自动回复消息...")
-    applescript.run(script)
+        # 检查是否找到匹配项
+        if match_result:
+            order_id, account_id = match_result
+            print(f">>>>>>>>Match found! Order ID: {order_id}, Account Name: {account_id}")
 
-def check_and_reply():
-    """检查微信群消息，如果符合条件则自动回复"""
-    open_group_chat()
-    time.sleep(1)  # 等待消息加载
-    messages = get_latest_messages()
+            # 构造发送的消息内容
+            order_message = f"接单 {order_id}"
 
-    # 检查是否包含特定关键词
-    if "特定关键词" in messages:  # 修改为实际检测的关键词
-        print("检测到符合条件的消息，发送自动回复...")
-        send_reply()
+            # 查找用户并发送消息（实际发送逻辑已注释）
+            user = get_user_by_id(account_id)
+            if user:
+                itchat.send(order_message, toUserName=user[0]['UserName'])
+                print(f"Message sent to {account_id}: {order_message}")
+            else:
+                print(f"User with ID '{account_id}' not found.")
+        else:
+            print("No match found for the specified pattern.")
+
+
+def message_match(msg_text):
+    # 解码消息内容
+    msg_text = html.unescape(msg_text)
+    # 将所有换行符替换为空格
+    msg_text = msg_text.replace("\n", " ")
+    print("Testing message:", msg_text)  # 输出待测试的消息内容
+    # 匹配特定格式的消息内容
+    match = re.search(MESSAGE_PATTERN, msg_text)
+    if match:
+        order_id = match.group(1).strip()  # 提取动态编号
+        account_name = match.group(2).strip()  # 提取接单人账号
+        print(f"Match found! Order ID: {order_id}, Account Name: {account_name}")
+        return order_id, account_name
     else:
-        print("未检测到符合条件的消息")
+        print("No match found for the specified pattern.")
+        return None
 
-# 设置每隔 1 分钟检查一次微信群消息
-schedule.every(1).minutes.do(check_and_reply)
 
-print("微信自动回复脚本已启动...")
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+def get_user_by_id(account_id):
+    # 通过微信ID查找用户
+    if account_id == 'wxid_m6zofxt0b1do22':
+        return get_user_by_nike('AI源')
+
+
+def get_user_by_nike(nike_name):
+    # 查找用户并发送消息
+    user = itchat.search_friends(nickName=nike_name)
+    return user
+
+
+# 登录并开始运行
+itchat.auto_login()
+itchat.run()
