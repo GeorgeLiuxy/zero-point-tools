@@ -44,7 +44,7 @@ with open('写字楼销售2.csv', mode='a', newline='', encoding='utf-8') as csv
 
     try:
         # 循环访问分页
-        for page in range(103, 1000):  # 设置较大上限以便停止
+        for page in range(116, 1000):  # 设置较大上限以便停止
             if page == 1:
                 url = "https://sh.sydc.anjuke.com/xzl-shou/?from=navigation"
             else:

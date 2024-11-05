@@ -43,7 +43,7 @@ with open('写字楼租赁12.csv', mode='a', newline='', encoding='utf-8') as cs
 
     try:
         # 循环访问分页
-        for page in range(129, 527):  # 设置较大上限以便停止
+        for page in range(142, 527):  # 设置较大上限以便停止
             if page == 1:
                 url = "https://sh.sydc.anjuke.com/xzl-zu/"
             else:
