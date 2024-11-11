@@ -1,0 +1,43 @@
+输入数据：
+ positions
+ goal_positions
+ history_sequences
+ local_maps
+ edge_features
+ adjacency_matrices
+
+节点特征编码器：
+ positions -> position_feat
+ rel_goal_pos -> goal_feat
+ history_sequences -> history_tensors (通过 history_encoder)
+ local_maps -> local_map_tensors (通过 local_map_encoder)
+ features = position_feat + goal_feat + history_tensors + local_map_tensors
+
+时间序列特征：
+ h = [features_t for t in 1 to seq_length] -> (batch_size, seq_length, num_agents, hidden_dim)
+
+时间 Transformer 层（逐层处理）：
+for each TemporalTransformerLayer in temporal_layers:
+    h = TemporalTransformerLayer(h, src_mask)
+
+空间 GCN 注意力层（对每个时间步 t）：
+for t in 1 to seq_length:
+    h_t = h[:, t, :, :]
+    adj_t = adjacency_matrices[:, t, :, :]
+    edge_feat_t = edge_features[:, t, :, :, :]
+    comm_mask_t = adj_t == 0
+    for each SpatialGCNAttentionLayer in spatial_layers:
+        h_t = SpatialGCNAttentionLayer(h_t, adj_t, edge_feat_t, src_mask=comm_mask_t)
+    h[:, t, :, :] = h_t
+
+动作预测：
+ h_pred = h[:, -1, :, :]  # 最后一个时间步的特征
+ pred_actions = []
+ for _ in range(pred_length):
+    action = output_layer(h_pred)
+    pred_actions.append(action)
+    # 可选：更新 h_pred
+ pred_actions = stack(pred_actions, dim=1)
+
+输出：
+ pred_actions 形状为 (batch_size, pred_length, num_agents, out_dim)

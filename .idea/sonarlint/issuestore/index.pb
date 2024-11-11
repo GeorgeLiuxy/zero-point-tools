@@ -65,3 +65,42 @@ B
 utils/fileUtils.py,4/f/4f660898fbe44f78b646c9b5e8ea9d4b16b13418
 A
 go-folder/main.go,2/a/2a20aa0b016a0b8c5f4de16d6e7e12f2979bcecc
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+J
+AI/demo/TemporalConvNet.py,7/5/754621df023fb3cccd723ab9908df4698ea43219
+_
+/AI/demo/random_spanish_comments_with_emojis.csv,d/c/dcd7cef5fab13b7dcda8f4e254fe4133217462c1
+B
+AI/demo/shuiyin.py,7/1/715cf3f983c8f93ff277f459f45c4e232111360f
+T
+$AI/demo/simple-sentiment-analysis.py,7/6/764b1f6e94ed8f2a151b250812363fb0ef9c681d
+?
+AI/demo/test.py,8/b/8b2281ecbb227d197b8e4434138c26237ad4e8f6
+A
+AI/demo/test01.py,f/5/f575c6aa2aa03fcd3d0772ae039e5ec8d25dab2d
+A
+AI/demo/test02.py,6/f/6fa4102114cf86fed87ce8a94bcfce20f5618f4b
+M
+AI/demo/train_result_graph.py,4/b/4bc08124afbda232c3f369ced64fc4dc8e517a50
+P
+ AI/demo/train_result_graph_01.py,f/b/fb4f79cd4f349703c00a459620a4797cc20f0ff2
+P
+ AI/demo/train_result_graph_02.py,2/1/21279c96373ebcb217f66af8381afd2307e634e9
+P
+ AI/demo/train_result_graph_03.py,e/1/e13b706a88f6d0b0694ce029825fa0b50aa065d7
+R
+"AI/demo/train_result_graph_plus.py,5/0/506983212d6b676bb4916c47ba8c14553debb0ee
+>
+AI/demo/xxx.py,d/a/dab9b4af1d2c8d4e6a5ce9e392e68af7501c6570
+F
+chinamobile/scraper.py,6/2/62cabfda46f70fc60cba1985413f159c9e9426dc
+L
+scapers/googleNewsScraper.py,9/7/97003a284a0ddf534473b94c44563cd6d31bdd82
+O
+scapers/scaperTiktokComments.py,7/a/7a615f4ac0270a1a9549ae5b6c52795bc11d92e3
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
