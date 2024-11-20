@@ -1,0 +1,14 @@
+setup.py
+example_spider/__init__.py
+example_spider/items.py
+example_spider/middlewares.py
+example_spider/pipelines.py
+example_spider/settings.py
+example_spider/setup.py
+example_spider/spiders/ExampleSpider.py
+example_spider/spiders/__init__.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

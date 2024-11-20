@@ -1,0 +1,2 @@
+[scrapy]
+spiders = example_spider.spiders

@@ -1,0 +1,2 @@
+[scrapy]
+settings = example_spider.settings

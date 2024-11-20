@@ -1,0 +1,9 @@
+setup.py
+example_spider.egg-info/PKG-INFO
+example_spider.egg-info/SOURCES.txt
+example_spider.egg-info/dependency_links.txt
+example_spider.egg-info/entry_points.txt
+example_spider.egg-info/requires.txt
+example_spider.egg-info/top_level.txt
+spiders/ExampleSpider.py
+spiders/__init__.py
