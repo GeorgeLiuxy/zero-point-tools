@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Video Controller</title>
+    <style>
+        body {
+            width: 200px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        /* 设置容器为 flex 布局 */
+        .button-container {
+            display: flex;
+            justify-content: space-between;  /* 水平排列，按钮之间有间隔 */
+            gap: 10px; /* 添加按钮间距 */
+        }
+        /* 设置按钮宽度为 50% */
+        .button-container button {
+            width: 48%; /* 每个按钮占据容器宽度的 48% */
+            padding: 10px;
+            cursor: pointer;
+        }
+        /* 按钮的样式（可根据需要自定义） */
+        .button_phone, .check_button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .button_phone:hover, .check_button:hover {
+            background-color: #45a049;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .status-message {
+            font-size: 16px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="play-btn">播放/暂停</button>
+    <button id="fast-forward-btn">快进</button>
+    <button id="rewind-btn">倒退</button>
+    <button id="speed-up-btn">加速</button>
+    <button id="slow-down-btn">减速</button>
+    <button id="jump-to-time-btn">跳转时间</button>
+
+<script src="popup.js">
+
+</script>
+</body>
+</html>
