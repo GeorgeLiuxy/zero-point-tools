@@ -12,3 +12,9 @@
 *.ipr
 *.class
 *.log*.log*.log
+auto_video_study/build/
+auto_video_study/chromedrivers/
+auto_video_study/chromedriver
+auto_video_study/chromedriver.exe
+auto_video_study/chrome-mac-arm64/
+auto_video_study/dist/
