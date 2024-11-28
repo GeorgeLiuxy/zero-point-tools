@@ -1,65 +1,40 @@
 import base64
 import datetime
+import hashlib
 import queue
 import sys
 import threading
 import time
 import tkinter as tk
+from io import BytesIO
 from tkinter import messagebox
 
 import requests
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
+from PIL import Image
+import pytesseract
+
+''' 赤峰市专业技术人员继续教育基地'''
 
 START_DATE = datetime.date(2024, 11, 28)  # 示例日期，你可以选择程序首次运行的日期
 
 # 登录API URL
 login_url = "https://portalapi.tlsjyy.com.cn/api/login/login"
+# kaptcha_url = f"https://gp.chinahrt.com/gp6/system/manager/kaptcha?d={timestamp_str}"
 
-def getCourseAndChapters(headers, my_course_params):
-    # 1. 获取“我的课程”接口
-    my_course_url = "https://peixunapi.tlsjyy.com.cn/api/course/my_course"
-    # 发送GET请求获取我的课程
-    my_course_response = requests.get(my_course_url, headers=headers, params=my_course_params, timeout=10)
-    if my_course_response.status_code == 200:
-        my_course_data = my_course_response.json()
-        # print("我的课程:", my_course_data)
-    else:
-        print("获取我的课程失败，状态码:", my_course_response.status_code)
-    chapter_datas = []
-    for course in my_course_data['data']['list']:
-        # 2. 获取“课程章节”接口
-        chapter_url = "https://peixunapi.tlsjyy.com.cn/api/course/chapter"
-        chapter_params = {
-            'course_id': course['id'],
-            'train_id': 1701
-        }
-        # 发送GET请求获取课程章节
-        chapter_response = requests.get(chapter_url, headers=headers, params=chapter_params, timeout=10)
-        if chapter_response.status_code == 200:
-            chapter_data = chapter_response.json()
-            for chapter_item in chapter_data['data']['list']:
-                if chapter_item['time_length'] > chapter_item['study_time_length'] or chapter_item['is_done'] != 1:
-                    chapter_item['course'] = course
-                    chapter_datas.append(chapter_item)
-                    # print("加入未完成课程章节:", chapter_item)
-        else:
-            print("获取课程章节失败，状态码:", chapter_response.status_code)
-    return chapter_datas
-
-
-def encode_base64(data):
-    # 将字符串编码为字节类型，然后进行 Base64 编码
-    encoded_bytes = base64.b64encode(data.encode('utf-8'))
-    # 将编码后的字节转换回字符串
-    return encoded_bytes.decode('utf-8')
+def md5_encrypt(password):
+    # 使用 MD5 对密码进行加密
+    md5 = hashlib.md5()
+    md5.update(password.encode('utf-8'))  # 将密码编码为字节流
+    return md5.hexdigest()  # 返回加密后的十六进制字符串
 
 
 def login(username, password):
     global headers
     data = {
-        "username": encode_base64(username),
-        "password": encode_base64(password)
+        "username": username,
+        "password": md5_encrypt(password)
     }
     # 发送POST请求进行登录
     login_response = requests.post(login_url, data=data, timeout=10)
@@ -239,41 +214,105 @@ def update_log(result_text_widget, log_queue):
     result_text_widget.after(100, update_log, result_text_widget, log_queue)  # 每100ms检查一次
 
 
+def get_current_time_stamp():
+    # 获取当前的日期和时间
+    now = datetime.now()
+    # 获取时间戳（秒级），并转换为毫秒
+    timestamp_milliseconds = int(now.timestamp() * 1000)
+    print(f"毫秒级时间戳: {timestamp_milliseconds}")
+    return timestamp_milliseconds
+
+
+
+def get_captcha_image(kaptcha_url):
+    # 发送请求获取验证码图片
+    response = requests.get(kaptcha_url)
+    if response.status_code == 200:
+        # 保存验证码图片
+        with open('captcha.jpg', 'wb') as f:
+            f.write(response.content)
+        print("验证码图片已保存！")
+        return 'captcha.jpg'
+    else:
+        print(f"获取验证码失败，HTTP状态码: {response.status_code}")
+        return None
+
+def parse_captcha(captcha_image_path):
+    # 载入验证码图片
+    captcha_image = Image.open(captcha_image_path)
+
+    # 使用 Tesseract 解析验证码
+    captcha_text = pytesseract.image_to_string(captcha_image).strip()
+
+    # 输出解析结果
+    print(f"解析出的验证码是：{captcha_text}")
+    return captcha_text
+
+
+# 验证验证码
+def valid(captcha_text, username, password):
+    valid_url = "https://gp.chinahrt.com/gp6/system/manager/login/valid"
+    # 登录参数
+    data = {
+        "from": "1",
+        "userName": username,
+        "password": md5_encrypt(password),
+        "platformId": 88,
+        "captcha": captcha_text
+    }
+    # 发送 POST 请求进行登录
+    response = requests.post(valid_url, data=data)
+    if response.status_code == 200:
+        if '验证码校验成功' in response.text:  # 假设页面中有"登录成功"标识
+            print("验证码校验成功！")
+            return True
+        else:
+            print("验证码校验失败，验证码可能错误或其他原因。")
+            return False
+    else:
+        print(f"验证码校验请求失败，HTTP状态码: {response.status_code}")
+        return False
+
+
 def login_study(username, password, log_queue):
     if username and password:
-        headers = login(username, password)
-        log_queue.put("登录成功，加载课程章节...\n")
-
-    # 模拟选择的课程参数
-        my_course_params_bx = {'train_id': 1701, 'type': 1}
-        my_course_params_xx = {'train_id': 1701, 'type': 2}
-
-        start_study(headers, [my_course_params_bx, my_course_params_xx], log_queue)
+        kaptcha_url = f"https://gp.chinahrt.com/gp6/system/manager/kaptcha?d={get_current_time_stamp()}"
+        # 获取验证码图片
+        captcha_image_path = get_captcha_image(kaptcha_url)
+        # 解析验证码
+        captcha_text = parse_captcha(captcha_image_path)
+        # 校验验证码
+        if valid(captcha_text, username, password):
+            headers = login(username, password, captcha_text)
+            log_queue.put("登录成功，加载课程章节...\n")
+            start_study(headers, [my_course_params_bx, my_course_params_xx], log_queue)
+        else:
+            messagebox.showerror("验证码错误", "验证码错误，请重新输入")
     else:
         messagebox.showerror("输入错误", "请填写用户名和密码")
 
 
 def create_ui():
     window = tk.Tk()
-    window.title("在线学习平台")
+    window.title("赤峰市继续教育平台在线学习平台")
 
     # 创建用户名和密码输入框
     tk.Label(window, text="用户名:").grid(row=0, column=0)
     username_entry = tk.Entry(window)
     username_entry.grid(row=0, column=1)
-    username_entry.insert(0, "18747339856")
+    username_entry.insert(0, "15540039771")
 
     tk.Label(window, text="密码:").grid(row=1, column=0)
     password_entry = tk.Entry(window, show="*")
     password_entry.grid(row=1, column=1)
-    password_entry.insert(0, "Lixia890425")
+    password_entry.insert(0, "Aa123456789")
 
 
     # 创建一个日志队列，用于线程间安全地传递消息
     log_queue = queue.Queue()
 
     # 创建登录按钮
-    login_button = tk.Button(window, text="登录", command=lambda: on_login_button_click(username_entry, password_entry
+    login_button = tk.Button(window, text="登录学习", command=lambda: on_login_button_click(username_entry, password_entry
                                                                                 , login_button, log_queue))
     login_button.grid(row=2, column=0, columnspan=2)
     # 创建一个文本框用于显示学习进度和日志
