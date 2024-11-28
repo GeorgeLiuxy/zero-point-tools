@@ -255,7 +255,7 @@ def login_study(username, password, log_queue):
 
 def create_ui():
     window = tk.Tk()
-    window.title("在线学习平台")
+    window.title("辽宁教育公共服务在线学习平台")
 
     # 创建用户名和密码输入框
     tk.Label(window, text="用户名:").grid(row=0, column=0)
@@ -273,7 +273,7 @@ def create_ui():
     log_queue = queue.Queue()
 
     # 创建登录按钮
-    login_button = tk.Button(window, text="登录", command=lambda: on_login_button_click(username_entry, password_entry
+    login_button = tk.Button(window, text="登录学习", command=lambda: on_login_button_click(username_entry, password_entry
                                                                                 , login_button, log_queue))
     login_button.grid(row=2, column=0, columnspan=2)
     # 创建一个文本框用于显示学习进度和日志

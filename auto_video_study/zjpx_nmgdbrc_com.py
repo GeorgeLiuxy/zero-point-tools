@@ -246,6 +246,7 @@ def valid(captcha_text, username, password):
         print(f"验证码校验请求失败，HTTP状态码: {response.status_code}")
         return False
 
+
 # 获取课程列表
 def get_courses_by_plan_id(headers, plan_id):
     params = {
@@ -253,7 +254,7 @@ def get_courses_by_plan_id(headers, plan_id):
         "curPage": 1,
         "planId": plan_id,  # 替换为实际的 planId
         "learnFinish": 0,
-        "status": 1,  # 获取状态为未学习或进行中的课程
+        "status": 1,  # TODO 获取状态为未学习或进行中的课程 1 全部，2 未学习，3 已学习
         "courseTypeId": "",  # 如果没有特定的课程类型，可以为空
     }
     response = requests.get('https://manage.yzspeixun.com//yzsApi/plan/getPlanCourseList', params=params, headers=headers, timeout=10)
@@ -333,6 +334,7 @@ def watch_video(headers, section, video_url, log_queue):
         log_queue.put(f"播放视频结束：{video_url}")
 
     play_video()
+    # TODO 添加完成学习状态更新逻辑
     # # 创建并启动播放视频的线程
     # play_thread = threading.Thread(target=play_video)
     # play_thread.start()
