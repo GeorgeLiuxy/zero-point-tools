@@ -1,5 +1,6 @@
 import asyncio
 import datetime
+import subprocess
 import threading
 import time
 import tkinter as tk
@@ -7,6 +8,7 @@ from tkinter import ttk, messagebox
 import os
 import sys
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -26,11 +28,11 @@ website_url_map = {
 }
 
 # 本地 chromedriver 路径
-# chromedriver_path = "./chromedriver"  # 替换为你本地的 chromedriver 路径
+chromedriver_path = "./chromedriver"  # 替换为你本地的 chromedriver 路径
 
 user_list = []
-chromedriver_path = "./chromedriver.exe"  # 替换为你本地的 chromedriver 路径
-chrome_binary = "./chrome-win64/chrome.exe"
+# chromedriver_path = "./chromedriver.exe"  # 替换为你本地的 chromedriver 路径
+# chrome_binary = "./chrome-win64/chrome.exe"
 
 
 # 假设你用一个字典来保存当前播放的状态
@@ -41,6 +43,8 @@ playback_state = {
     'current_chapter_name': ''  # '章节名称'
 }
 completed_courses = []
+
+browser_processes = []  # 浏览器进程列表
 
 # 登录验证
 def validate_login(username, password):
@@ -105,6 +109,7 @@ def create_login_page():
 
     root.mainloop()
 
+
 def create_task_page():
     # 创建任务执行窗口
     task_window = tk.Tk()
@@ -152,7 +157,7 @@ def create_task_page():
     tk.Label(task_window, text="用户名").grid(row=2, column=0, sticky="E", padx=10, pady=5)
     username_entry = tk.Entry(task_window)
     username_entry.grid(row=2, column=1, sticky="EW", padx=5, pady=5)
-    username_entry.insert(0, "18447017696")
+    username_entry.insert(0, "15540039771")
 
     tk.Label(task_window, text="密码").grid(row=2, column=2, sticky="E", padx=10, pady=5)
     password_entry = tk.Entry(task_window)
@@ -219,25 +224,68 @@ def create_task_page():
         learning_thread = threading.Thread(target=start_learning, daemon=True)
         learning_thread.start()
 
+    def close_all_browsers():
+        for driver in browser_processes:
+            try:
+                driver.quit()  # 退出浏览器
+            except Exception as e:
+                print(f"关闭浏览器时出错: {e}")
+
     # 学习功能
     def start_learning():
         # 模拟学习过程，使用线程并行处理多个账号
-        threads = []
-        for username, password in user_list:
-            t = threading.Thread(target=process_user, args=(username, password))
-            threads.append(t)
-            t.start()
-        # 等待所有线程完成
-        for t in threads:
-            t.join()
-        time.sleep(1)  # 最后再模拟任务的整体耗时
-        write_log("学习任务完成！")
-        messagebox.showinfo("提示", "学习任务已完成！")
+        try:
+            threads = []
+            for username, password in user_list:
+                t = threading.Thread(target=process_user, args=(username, password))
+                threads.append(t)
+                t.start()
+            # 等待所有线程完成
+            for t in threads:
+                t.join()
+            time.sleep(1)  # 最后再模拟任务的整体耗时
+            write_log("学习任务完成！")
+            messagebox.showinfo("提示", "学习任务已完成！")
+        except Exception as e:
+            # 捕获异常，退出所有浏览器进程，并提示错误信息
+            print(f"出现异常: {e}")
+            close_all_browsers()
+            messagebox.showerror("错误", f"任务执行异常: {str(e)}，所有浏览器已退出，任务重新启动。")
+            start_learning_async()  # 重新启动学习任务
+
+    def initialize_browser():
+        # 配置 Chrome 浏览器选项
+        options = webdriver.ChromeOptions()
+        # options.add_argument("--incognito")  # 使用无痕模式
+        options.add_argument("--disable-extensions")  # 禁用扩展程序
+        options.add_argument("--start-maximized")  # 最大化窗口
+        options.add_argument("--disable-extensions")  # 禁用扩展
+        options.add_argument("--disable-gpu")  # 禁用 GPU 加速
+        options.add_argument("--no-sandbox")  # 不使用沙盒模式
+        options.add_argument('--no-proxy-server')  # 禁用代理
+        options.add_argument("--disable-blink-features=AutomationControlled")  # 禁用自动化标识
+        options.add_argument("disable-infobars")  # 禁用“Chrome正在被自动化测试软件控制”的提示
+        options.headless = True  # 或者 False，根据实际需求选择是否使用无头模式
+        # options.add_argument("--verbose")  # 启用详细日志
+        # options.binary_location = chrome_binary  # 设置 Chrome 浏览器的路径
+        # options.add_argument("--window-size=800,600")
+        # options.add_argument("--window-position=0,0")  # 将第一个窗口放置在屏幕左上角
+        options.add_argument("User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")  # 设置 User-Agent
+
+        # 如果希望显示浏览器窗口，**不要使用** --headless 参数
+        # options.add_argument("--headless")  # 注释掉此行，以便显示浏览器窗口
+        service = Service(executable_path=chromedriver_path)
+        # 启动浏览器，使用本地 chromedriver
+        browser = webdriver.Chrome(service=service, options=options)
+        return browser
 
     def process_user(username, password):
         log_message = f"用户 {username} 正在学习..."
         # messagebox.showinfo("提示", "是否已经选择到指定的视频页面，如果没有可能会报错！如果已经完成，点击确认~")
-        watch_video(username, password, selected_url.get())
+        browser = initialize_browser()
+        watch_video(browser, username, password, selected_url.get())
+        # 存储浏览器进程以备后续关闭
+        browser_processes.append(browser)
         write_log(log_message)
         task_window.update_idletasks()  # 刷新界面
         time.sleep(1)  # 模拟任务耗时
@@ -276,30 +324,7 @@ def create_task_page():
     task_window.mainloop()
 
 # 模拟观看视频的过程
-def watch_video(username, password, video_url):
-    # 配置 Chrome 浏览器选项
-    options = webdriver.ChromeOptions()
-    # options.add_argument("--incognito")  # 使用无痕模式
-    options.add_argument("--disable-extensions")  # 禁用扩展程序
-    options.add_argument("--start-maximized")  # 最大化窗口
-    options.add_argument("--disable-extensions")  # 禁用扩展
-    options.add_argument("--disable-gpu")  # 禁用 GPU 加速
-    options.add_argument("--no-sandbox")  # 不使用沙盒模式
-    options.add_argument('--no-proxy-server')  # 禁用代理
-    options.add_argument("--disable-blink-features=AutomationControlled")  # 禁用自动化标识
-    options.add_argument("disable-infobars")  # 禁用“Chrome正在被自动化测试软件控制”的提示
-    options.headless = True  # 或者 False，根据实际需求选择是否使用无头模式
-    # options.add_argument("--verbose")  # 启用详细日志
-    options.binary_location = chrome_binary  # 设置 Chrome 浏览器的路径
-    # options.add_argument("--window-size=800,600")
-    # options.add_argument("--window-position=0,0")  # 将第一个窗口放置在屏幕左上角
-    options.add_argument("User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")  # 设置 User-Agent
-
-    # 如果希望显示浏览器窗口，**不要使用** --headless 参数
-    # options.add_argument("--headless")  # 注释掉此行，以便显示浏览器窗口
-    service = Service(executable_path=chromedriver_path)
-    # 启动浏览器，使用本地 chromedriver
-    browser = webdriver.Chrome(service=service, options=options)
+def watch_video(browser, username, password, video_url):
 
     try:
         # 打开网页等完成登录操作
@@ -326,6 +351,7 @@ def watch_video(username, password, video_url):
                 click_tab_and_traverse(browser, "必修课程")
                 click_tab_and_traverse(browser, "选修课程")
                 time.sleep(2)  # 等待返回操作完成
+                print("已完成所有课程学习")
         else:
             print("没有找到 '开始学习' 按钮")
 
@@ -336,13 +362,15 @@ def watch_video(username, password, video_url):
 
 def click_tab_and_traverse(browser, tab_name):
     # 定位页签并点击
+    course_section = WebDriverWait(browser, 15).until(
+        EC.element_to_be_clickable((By.CLASS_NAME, 'course_section'))
+    )
+    # 定位页签并点击
     tab = WebDriverWait(browser, 15).until(
-        EC.presence_of_element_located((By.XPATH, f'//div[@class="tab_box"]//div[contains(text(), "{tab_name}")]'))
+        EC.element_to_be_clickable((By.XPATH, f'//div[@class="tab_box"]//div[contains(text(), "{tab_name}")]'))
     )
-    WebDriverWait(browser, 15).until(
-        EC.element_to_be_clickable(tab)
-    )
-    tab.click()  # 点击页签
+    browser.execute_script("arguments[0].scrollIntoView(true);", tab)  # 滚动到目标元素
+    ActionChains(browser).move_to_element(tab).click().perform()  # 点击元素
     print(f"已点击 '{tab_name}' 页签")
     # 等待对应页面加载完成
     time.sleep(2)  # 等待页面切换完成，实际情况可以根据需要调整等待时间
@@ -359,109 +387,126 @@ def click_tab_and_traverse(browser, tab_name):
     for ul in ul_elements:
         # 获取当前 ul 下的所有 li 元素
         li_elements = ul.find_elements(By.TAG_NAME, 'li')
+        print(f"在 {tab_name} 页签下找到 {len(li_elements)} 个 li 元素")
         if not li_elements:
             print(f"该 ul 下没有 li 元素")
             continue
 
-        # 遍历每个 li 元素
-        for li in li_elements:
-            # 显式等待，确保 li 元素可点击
-            WebDriverWait(browser, 15).until(
-                EC.element_to_be_clickable(li)
+        # 遍历所有 li 元素
+        for i, li in enumerate(li_elements):
+            # 显式等待，确保第 i 个 li 元素可点击
+            li_element = WebDriverWait(browser, 10).until(
+                EC.element_to_be_clickable(
+                    (By.XPATH, f"//ul//li[{i + 1}]")
+                )
             )
-            print(f"在 '{tab_name}' 页签下找到 li 元素:", li.text)
+            # 你可以在这里添加你点击后的其他操作（比如等待新页面加载）
+            time.sleep(2)  # 示例等待，调整为实际需求
+            print(f"在 '{tab_name}' 页签下找到 li 元素:", li_element.text)
             course_type = tab_name  # 课程类型
-            course_name = li.text  # 课程名称
-            # 点击该 li 元素
-            li.click()
+            course_name = li_element.text  # 课程名称
+            browser.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});", li_element)  # 滚动到目标元素
+            # browser.execute_script("arguments[0].scrollIntoView(true);", li_element)  # 滚动到目标元素
+            ActionChains(browser).move_to_element(li_element).click().perform()  # 点击元素
+            li_element.click()
             time.sleep(1)  # 等待右侧内容加载
             # 等待右侧内容框加载完成
             WebDriverWait(browser, 15).until(
                 EC.presence_of_element_located((By.CLASS_NAME, 'el-main'))
             )
-            print("右侧内容框已加载")
             # 获取右侧框中的章节列表（class="section_ul"）
-            section_ul = browser.find_element(By.CLASS_NAME, 'el-main').find_element(By.CLASS_NAME, 'section_ul').find_elements(By.TAG_NAME, 'li')
+            section_li = (browser.find_element(By.CLASS_NAME, 'el-main').find_element(By.CLASS_NAME, 'section_ul')
+                          .find_elements(By.TAG_NAME, 'li'))
             # 遍历每个章节项
-            for section in section_ul:
+            for j, section in enumerate(section_li):
                 # 获取进度条的文本内容
                 try:
-                    progress_text = section.find_element(By.XPATH, './/div[@class="el-progress__text"]//span').text
-                    section_text = section.find_element(By.CLASS_NAME, 'tit').text
-                except Exception as e:
-                    print(f"未找到进度信息，跳过该章节: {e}")
-                    continue
-                # 判断进度是否为 100%
-                if progress_text != "100%":
-                    # print(f"点击未完成章节: {section_text}，当前进度：{progress_text}")
-                    chapter_name = section_text  # 章节名称
-                    # 判断该章节是否已完成
-                    is_completed = False
-                    for completed in completed_courses:
-                        if completed[1] == course_name and completed[2] == chapter_name:
-                            is_completed = True
-                            break
-                    if not is_completed:
-                        # 还未观看的章节，开始播放
-                        print(f"开始播放:{course_type} - {course_name} - {chapter_name}")
-                        time.sleep(3)  # 等待视频页面加载，实际情况可以调整
+                    # 获取进度条的文本内容
+                    progress_text = WebDriverWait(section, 15).until(
+                        EC.presence_of_element_located((By.XPATH, './/div[@class="el-progress__text"]//span'))
+                    ).text
+
+                    # 获取章节的标题
+                    section_tit = WebDriverWait(section, 15).until(
+                        EC.presence_of_element_located((By.CLASS_NAME, 'tit'))
+                    )
+                    section_text = section_tit.text
+                    # 判断进度是否为 100%
+                    if progress_text != "100%":
+                        # print(f"点击未完成章节: {section_text}，当前进度：{progress_text}")
+                        chapter_name = section_text  # 章节名称
+                        # time.sleep(3)  # 等待视频页面加载，实际情况可以调整
                         try:
-                            tit_btn = section.find_element(By.CLASS_NAME, 'tit')
-                            WebDriverWait(browser, 15).until(
-                                EC.element_to_be_clickable(tit_btn)
+                            # 使用 xpath 定位文本为"1.情境导入"的div元素
+                            tit_element = WebDriverWait(browser, 10).until(
+                                EC.presence_of_element_located(
+                                    (By.XPATH, f"//div[@class='tit' and text()='{section_text}']")
+                                )
                             )
-                            tit_btn.click()
+                            WebDriverWait(course_section, 10).until(
+                                EC.visibility_of(tit_element)  # 等待目标元素变为可见
+                            )
+                            browser.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});", tit_element)
+                            WebDriverWait(course_section, 10).until(
+                                EC.element_to_be_clickable(tit_element)  # 等待目标元素变为可见
+                            )
+                            ActionChains(browser).move_to_element(tit_element)  # 点击元素
+                            print(f"准备播放:{course_type} - {course_name} - {chapter_name}")
+                            # 强制执行 JavaScript 点击
+                            browser.execute_script("arguments[0].click();", tit_element)
+                            print(f"开始播放:{course_type} - {course_name} - {chapter_name}")
                             time.sleep(3)
-                            # 等待提示框出现
-                            dialog = WebDriverWait(browser, 15).until(
-                                EC.presence_of_element_located((By.CLASS_NAME, 'el-overlay-dialog'))
-                            )
-                            # 等待确认按钮加载完成
-                            confirm_button = dialog.find_element(By.CLASS_NAME, 'el-button--primary')
-                            WebDriverWait(browser, 15).until(
-                                EC.element_to_be_clickable(confirm_button)
-                            )
-                            # 点击确认按钮，跳转视频页面
-                            # confirm_button.click()
-                            # 滚动到按钮
-                            browser.execute_script("arguments[0].scrollIntoView(true);", confirm_button)
-                            # 点击按钮
-                            confirm_button.click()
-
-                            print("关闭提示框，继续跳转到视频页面")
-                        except Exception as e:
-                            print("无进行中的播放任务，直接跳转到视频页面")
-
-                        print(f"开始学习章节: {section_text}")
-                        # 跳转视频页，并处理视频页面播放以及完成逻辑
-                        do_view_video(browser, section_text, course_type, course_name, chapter_name)
-                    else:
-                        print(f"已完成观看: {course_type} - {course_name} - {chapter_name}")
-
+                            try:
+                                # 等待提示框出现
+                                dialog = WebDriverWait(browser, 5).until(
+                                    EC.presence_of_element_located((By.CLASS_NAME, 'el-overlay-dialog'))
+                                )
+                                # 等待确认按钮加载完成
+                                confirm_button = dialog.find_element(By.CLASS_NAME, 'el-button--primary')
+                                WebDriverWait(browser, 5).until(
+                                    EC.element_to_be_clickable(confirm_button)
+                                )
+                                # 点击确认按钮，跳转视频页面
+                                # 滚动到按钮
+                                browser.execute_script("arguments[0].scrollIntoView(true);", confirm_button)  # 滚动到目标元素
+                                ActionChains(browser).move_to_element(confirm_button).click().perform()  # 点击元素
+                                print("关闭提示框，继续跳转到视频页面")
+                            except Exception as e2:
+                                print(f"未找到提示框，跳过关闭操作: {e2}")
+                            print(f"开始学习章节: {section_text}")
+                            # 跳转视频页，并处理视频页面播放以及完成逻辑
+                            do_view_video(browser, section_text, course_type, course_name, chapter_name)
+                        except Exception as e1:
+                            print(f"跳转视频页失败{e1}")
+                    # else:
+                    #     print(f"已完成观看: {course_type} - {course_name} - {section_text}: 已完成学习~~")
+                except Exception as e1:
+                    print(f"未找到进度信息，跳过该章节: {e1}")
+                    continue
+            print(f"{course_type} - {course_name}: 已完成学习~~")
             time.sleep(3)  # 适当等待，防止页面过于频繁的请求
-    if course_type == '必修课程':
-        playback_state['course_type_bx'] = True
-    if course_type == '选修课程':
-        playback_state['course_type_xx'] = True
+        print(f"{tab_name} : 已完成学习~~")
+        if course_type == '必修课程':
+            playback_state['course_type_bx'] = True
+        if course_type == '选修课程':
+            playback_state['course_type_xx'] = True
 
 
 def do_view_video(browser, section_text, course_type, course_name, chapter_name):
     try:
         # 等待提示框出现
         close_dialog(browser)
-        time.sleep(3)  # 等待视频页面加载，实际情况可以调整
         # 2. 等待并点击“开始学习”按钮
         # 等待开始学习按钮加载完成
         oper_box = WebDriverWait(browser, 15).until(
-            EC.element_to_be_clickable((By.CLASS_NAME, 'oper_box'))
+            EC.presence_of_element_located((By.CLASS_NAME, 'oper_box'))
         )
-        start_button = oper_box.find_element(By.CLASS_NAME, 'button_box')
-
-        close_dialog(browser)
-        WebDriverWait(browser, 15).until(
-            EC.element_to_be_clickable(start_button)
+        start_button = WebDriverWait(oper_box, 15).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, 'button_box'))
         )
         # 点击开始学习按钮
+        browser.execute_script("arguments[0].scrollIntoView(true);", start_button)  # 滚动到目标元素
+        ActionChains(browser).move_to_element(start_button).click().perform()  # 点击元素
         start_button.click()
         print(f"开始播放视频~~{section_text}")
         # 1. 检查视频是否播放完成
@@ -469,7 +514,6 @@ def do_view_video(browser, section_text, course_type, course_name, chapter_name)
         video_element = WebDriverWait(browser, 15).until(
             EC.presence_of_element_located((By.TAG_NAME, 'video'))
         )
-
         # 轮询检查视频是否播放完成
         while True:
             # 判断视频是否播放完成（视频播放结束时，ended属性为True）
@@ -477,11 +521,7 @@ def do_view_video(browser, section_text, course_type, course_name, chapter_name)
             if is_ended:
                 print("视频播放完毕")
                 break  # 视频播放完成，跳出循环
-            # else:
-            #     print("视频未播放完毕")
             time.sleep(1)  # 每秒检查一次
-        time.sleep(2)  # 每秒检查一次
-        # 2. 点击“结束学习”按钮
         # 等待“结束学习”按钮可点击
         end_button = WebDriverWait(browser, 15).until(
             EC.element_to_be_clickable((By.CLASS_NAME, 'button_box2'))
@@ -512,8 +552,8 @@ def close_dialog(browser):
             EC.element_to_be_clickable((By.CLASS_NAME, 'el-button--primary'))
         )
         close_button.click()
-    except Exception as e:
-        print("无提示框，跳过关闭操作")
+    except Exception as e1:
+        print(f"无提示框，跳过关闭操作:{e1}")
 
 
 def to_tasks_page(browser):
@@ -621,7 +661,18 @@ def proceed_with_url(selected_url):
         messagebox.showinfo("提示", f"即将访问：{current_url}")
         # 在这里添加后续处理逻辑，比如打开 URL、发起请求等
 
+def restart_program():
+    """ 当程序异常中断时，自动重启程序 """
+    messagebox.showinfo("程序重启", "程序即将重启！")
+    time.sleep(1)
+    subprocess.Popen([sys.executable, 'main.py'])  # 使用当前 Python 解释器启动 main.py
+
 
 if __name__ == '__main__':
-    # 运行程序
-    create_login_page()
+    try:
+        # 运行程序
+        create_login_page()
+    except Exception as e:
+        # 捕获并处理其他异常
+        print(f"主程序发生异常: {e}")
+        restart_program()  # 发生异常时重启程序

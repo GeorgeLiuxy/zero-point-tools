@@ -222,3 +222,9 @@ A
 AI/study/xxxxz.py,3/a/3a1a3fbf6d128b2ab4731b76d8ce11274f3b8004
 @
 AI/study/xxxx.py,6/7/6778b6518964758ca44d022d64a96cafb197c7c5
+J
+auto_video_study/main.spec,f/f/ffa84df625e1682964b977d0f1592714442cf8b6
+Q
+!auto_video_study/requirements.txt,e/4/e42a0d369e3aa5dc009913540ec3b0cbb849e70e
+H
+auto_video_study/main.py,5/3/5324130467bb3ce6a30ebea3542b85804ce45a6b
