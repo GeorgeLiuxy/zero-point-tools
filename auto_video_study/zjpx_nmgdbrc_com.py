@@ -501,12 +501,12 @@ def create_ui():
     tk.Label(window, text="用户名:").grid(row=0, column=0)
     username_entry = tk.Entry(window)
     username_entry.grid(row=0, column=1)
-    username_entry.insert(0, "150426199205316084")
+    username_entry.insert(0, "")
 
     tk.Label(window, text="密码:").grid(row=1, column=0)
     password_entry = tk.Entry(window, show="*")
     password_entry.grid(row=1, column=1)
-    password_entry.insert(0, "pg63c2")
+    password_entry.insert(0, "")
 
 
     # 创建一个日志队列，用于线程间安全地传递消息
