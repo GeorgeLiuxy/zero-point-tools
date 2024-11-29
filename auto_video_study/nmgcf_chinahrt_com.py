@@ -1,5 +1,6 @@
 import base64
-import datetime
+import io
+from datetime import datetime
 import hashlib
 import queue
 import sys
@@ -14,11 +15,11 @@ import requests
 import vlc
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
-from PIL import Image
+from PIL import Image, ImageTk
 
 ''' 赤峰市专业技术人员继续教育基地'''
 
-START_DATE = datetime.date(2024, 11, 28)  # 示例日期，你可以选择程序首次运行的日期
+START_DATE = datetime(2024, 11, 28)  # 示例日期，你可以选择程序首次运行的日期
 
 # 登录API URL
 login_url = "https://manage.yzspeixun.com//yzsApi/platform/login"
@@ -30,48 +31,122 @@ def md5_encrypt(password):
     return md5.hexdigest()  # 返回加密后的十六进制字符串
 
 
-def login(username, password, log_queue):
-    global headers
+def get_captcha_image(headers, kaptcha_url):
+    try:
+        response = requests.get(kaptcha_url, headers=headers, timeout=10)
+        response.raise_for_status()  # 检查请求是否成功
+
+        if response.status_code == 200:
+            # 将图片内容转换为PIL对象
+            image = Image.open(io.BytesIO(response.content))
+            return image
+        else:
+            messagebox.showerror("错误", f"获取验证码失败，HTTP状态码: {response.status_code}")
+            return None
+    except requests.exceptions.RequestException as e:
+        # 捕获网络请求错误
+        messagebox.showerror("错误", f"请求验证码失败: {e}")
+        return None
+
+
+def parse_captcha(captcha_image_path):
+    captcha_text = ''
+    try:
+        # 载入验证码图片
+        captcha_image = Image.open(captcha_image_path)
+
+        # 使用 Tesseract 解析验证码
+        captcha_text = pytesseract.image_to_string(captcha_image).strip()
+
+        # 输出解析结果
+        print(f"解析出的验证码是：{captcha_text}")
+    except Exception as e:
+        print(f"解析验证码失败: {e}")
+    return captcha_text
+
+
+# 验证验证码
+def valid(headers, captcha_text, username, password):
+    valid_url = "https://gp.chinahrt.com/gp6/system/manager/login/valid"
+    # 登录参数
     data = {
-        "username": username,
-        "password": password,
-        'platformId': 4,
-        'code': ''
+        "from": "1",
+        "userName": username,
+        "password": md5_encrypt(password),
+        "platformId": 88,
+        "captcha": captcha_text
     }
-    # 发送POST请求进行登录
-    login_response = requests.post(login_url, data=data, timeout=10)
-    print("登录请求发送成功:", login_response.json())
-    # 打印返回的响应内容（通常会是JSON格式）
-    if login_response.status_code == 200:
-        # 解析返回的JSON响应
-        login_data = login_response.json()
-        data = login_data['data']
-        print("登录成功，返回数据:", login_data)
-        log_queue.put(f"登录成功，返回数据:{login_data}\n")
-        # 设置请求头，模拟浏览器行为
-        headers = {
-            "pragma": "no-cache",
-            "cache-control": "no-cache",
-            "sec-ch-ua-platform": "macOS",
-            "authorization": data['token'],
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-            "accept": "application/json, text/plain, */*",
-            "sec-ch-ua": "Google Chrome;v=131, Chromium;v=131, Not_A Brand;v=24",
-            "content-type": "application/json;charset=UTF-8",
-            "sec-ch-ua-mobile": "?0",
-            "origin": "https://manage.yzspeixun.com/",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-dest": "empty",
-            "referer": "https://manage.yzspeixun.com/",
-            "accept-encoding": "gzip, deflate, br, zstd",
-            "accept-language": "zh-CN,zh;q=0.9",
-            "priority": "u=1, i"
-        }
-    else:
-        print("登录失败，状态码:", login_response.status_code)
+    # 发送 POST 请求进行登录
+    response = requests.post(valid_url, data=data, headers=headers)
+    if response.status_code == 200:
+        return response.json()
+
+
+def get_current_time_stamp():
+    # 获取当前的日期和时间
+    now = datetime.now()
+    # 获取时间戳（秒级），并转换为毫秒
+    timestamp_milliseconds = int(now.timestamp() * 1000)
+    print(f"毫秒级时间戳: {timestamp_milliseconds}")
+    return timestamp_milliseconds
+
+
+def generateHeaders(data):
+    headers = {
+        "pragma": "no-cache",
+        "cache-control": "no-cache",
+        "sec-ch-ua-platform": "macOS",
+        "cookie": "",
+        "hrttoken": "",
+        "host": "gp.chinahrt.com",
+        # "authorization": data['token'],
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "accept": "application/json, text/plain, */*",
+        "sec-ch-ua": "Google Chrome;v=131, Chromium;v=131, Not_A Brand;v=24",
+        "content-type": "application/json;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0",
+        "origin": "https://gp.chinahrt.com",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://gp.chinahrt.com/index.html",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "zh-CN,zh;q=0.9",
+        "priority": "u=1, i"
+    }
     return headers
 
+
+def getSession(headers):
+    get_session_url = "https://gp.chinahrt.com/gp6/system/stu/user/getSession"
+    session_response = requests.get(get_session_url, headers=headers)
+    if session_response.status_code == 200:
+        session_data = session_response.json()
+        print("获取用户会话信息成功，返回数据:", session_data)
+        return session_data
+    else:
+        print("获取用户会话信息失败，状态码:", session_response.status_code)
+
+
+def login(username, password, log_queue, captcha):
+    global headers
+    # 发送请求获取验证码图片
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    if username and password and captcha:
+        # 校验验证码
+        data = valid(headers, captcha, username, password)
+        print(f'登录校验结果：{data}')
+        if data and data['success']:
+            headers = generateHeaders(data)
+            session_data = getSession(headers)
+            log_queue.put("登录成功，加载课程章节...\n")
+        else:
+            messagebox.showerror("登录失败", "验证码或账号密码错误，请重新输入")
+    else:
+        messagebox.showerror("输入错误", "请填写用户名和密码")
+    return headers
 
 def getStudyVideo(chapter, train_id, check_study_url):
     global response
@@ -148,7 +223,7 @@ def end_study(headers, chapter_id, train_id, video_url, time_length, study_time_
 
 
 def check_trial_period():
-    current_date = datetime.date.today()  # 获取当前日期
+    current_date = datetime.today()  # 获取当前日期
     # 计算当前日期与开始日期的差值
     date_diff = (current_date - START_DATE).days
 
@@ -158,7 +233,7 @@ def check_trial_period():
         return False  # 试用期未过
 
 
-def on_login_button_click(username_entry, password_entry, login_button, log_queue):
+def on_login_button_click(username_entry, password_entry, login_button, log_queue, captcha):
     # 检查试用期是否过期
     if check_trial_period():
         messagebox.showerror("试用期已过期", "您的试用期已过期，程序无法继续使用。请联系管理员")
@@ -171,7 +246,7 @@ def on_login_button_click(username_entry, password_entry, login_button, log_queu
             login_button.config(state=tk.DISABLED)
             # 创建新线程进行登录操作
 
-            threading.Thread(target=login_study, args=(username, password, log_queue), daemon=True).start()  # 启动后台线程
+            threading.Thread(target=login_study, args=(username, password, log_queue, captcha), daemon=True).start()  # 启动后台线程
         except Exception as e:
             log_queue.put(f"登录失败: {e}\n")
 
@@ -342,7 +417,8 @@ def get_video_url(headers, plan_id, course_id, chapter_id, section_id, log_queue
         return None
 
 
-def watch_video(headers, section, studyCode, recordId, video_url, log_queue):
+def watch_video(headers, section, studyCode, recordId, study_code, video_url, log_queue):
+
     user_id = ''
     response = requests.post('https://manage.yzspeixun.com//yzsApi/user/userInfo', headers=headers, timeout=10)
     if response.status_code == 200:
@@ -371,8 +447,9 @@ def watch_video(headers, section, studyCode, recordId, video_url, log_queue):
             if current_time - last_saved_time >= 15:
                 save_view_process_record(platformId, current_time)
                 last_saved_time = current_time  # 更新上次保存进度的时间
+
                 # 将播放进度日志输出到日志队列
-                # log_queue.put(f"当前播放进度：{current_time}/{video_duration}秒\n")
+                log_queue.put(f"当前播放进度：{current_time}/{video_duration}秒\n")
 
         # 视频播放结束时，最后一次保存进度
         save_view_process_record(platformId, video_duration)
@@ -432,90 +509,84 @@ def start_study(headers, log_queue):
                     studyCode, recordId, videoCode, video_url= get_video_url(headers, section['plan_id'], section['course_id'], section['chapter_id'], section['section_id'], log_queue)
                     if video_url:
                         # 观看视频
-                        watch_video(headers, section, studyCode, recordId, video_url, log_queue)
+                        watch_video(headers, section, studyCode, recordId, videoCode, video_url, log_queue)
     else:
         print("没有可用的培训计划")
 
 
-def get_sections(headers, plan_id, log_queue):
-    sections = []
-    courses = get_courses_by_plan_id(headers, plan_id)  # 查询课程
-    if courses:
-        for course in courses:
-            course_id = course['courseId']
-            course_name = course['courseName']
-            # 获取待学习的章节内容
-            chapter_url = f"https://manage.yzspeixun.com//yzsApi/courseApi/courseDetail?courseId={course_id}&planId={plan_id}"
-            chapter_response = requests.get(chapter_url, headers=headers, timeout=10)
-            if chapter_response.status_code == 200:
-                chapter_data = chapter_response.json()
-                for chapter in chapter_data['data']['chapter_list']:
-                    # 章节中再获取视频选项信息
-                    chapter_name = chapter['name']
-                    chapter_id = chapter['id']
-                    section_list = chapter['section_list']
-                    for section in section_list:
-                        # 获取章节ID
-                        section_id = section['id']
-                        # 获取学习时长
-                        study_time = section['study_time']
-                        # 获取总时长
-                        total_time = section['total_time']
-                        # 获取章节名称
-                        section_name = section['name']
-                        # 获取章节学习状态
-                        study_status = section['study_status']
-                        if total_time > study_time or study_status != '已学完':
-                            section['plan_id'] = plan_id
-                            section['course_id'] = course_id
-                            section['chapter_id'] = chapter_id
-                            section['section_id'] = section_id
-                            section['study_time'] = study_time
-                            section['total_time'] = total_time
-                            section['course_name'] = course_name
-                            section['chapter_name'] = chapter_name
-                            section['section_name'] = section_name
-                            sections.append(section)
-                            # print("加入未完成课程章节:", chapter)
-                        print(f"课程名称: {course_name}, 章节名称: {chapter_name}, 视频选项名称: {section_name}")
-    else:
-        print(f"计划ID {plan_id} 下没有未学习的课程")
-    return sections
-
-
-def login_study(username, password, log_queue):
+def login_study(username, password, log_queue, captcha):
     if username and password:
-        headers = login(username, password, log_queue)
+        headers = login(username, password, log_queue, captcha)
         log_queue.put("登录成功，加载课程章节...\n")
-        start_study(headers, log_queue)
-        log_queue.put("学习计划已完成...\n")
+        # start_study(headers, log_queue)
     else:
         messagebox.showerror("输入错误", "请填写用户名和密码")
 
 
+# 显示验证码图片的窗口
+def show_captcha_window(window, login_button, username_entry, password_entry, log_queue):
+
+    global headers
+    # 发送请求获取验证码图片
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    kaptcha_url = f"https://gp.chinahrt.com/gp6/system/manager/kaptcha?d={get_current_time_stamp()}"
+    captcha_image = get_captcha_image(headers, kaptcha_url)
+    if captcha_image:
+        # 创建新窗口显示验证码
+        captcha_window = tk.Toplevel(window)
+        captcha_window.title("请输入验证码")
+
+        # 将PIL图片转换为Tkinter兼容的格式
+        captcha_photo = ImageTk.PhotoImage(captcha_image)
+
+        # 创建一个Label来显示验证码图片
+        captcha_label = tk.Label(captcha_window, image=captcha_photo)
+        captcha_label.image = captcha_photo  # 保存对图像的引用
+        captcha_label.pack()
+
+        # 创建输入框让用户输入验证码
+        captcha_entry = tk.Entry(captcha_window)
+        captcha_entry.pack()
+
+        # 创建一个提交按钮
+        def submit_captcha():
+            captcha = captcha_entry.get()
+            if captcha:
+                # 提交验证码并继续登录
+                print(f"提交的验证码是：{captcha}")
+                captcha_window.destroy()  # 关闭验证码窗口
+                on_login_button_click(username_entry, password_entry, login_button, log_queue, captcha)  # 带上验证码继续登录
+            else:
+                messagebox.showwarning("警告", "请输入验证码。")
+
+        submit_button = tk.Button(captcha_window, text="提交验证码", command=submit_captcha)
+        submit_button.pack()
+
+# 创建UI界面
 def create_ui():
     window = tk.Tk()
-    window.title("赤峰市专业技术人员继续教育公需科目培训网自动学习平台")
+    window.title("赤峰市专业技术人员继续教育基地自动学习平台")
 
     # 创建用户名和密码输入框
     tk.Label(window, text="用户名:").grid(row=0, column=0)
     username_entry = tk.Entry(window)
     username_entry.grid(row=0, column=1)
-    username_entry.insert(0, "150426199205316084")
+    username_entry.insert(0, "150429199706061912")
 
     tk.Label(window, text="密码:").grid(row=1, column=0)
     password_entry = tk.Entry(window, show="*")
     password_entry.grid(row=1, column=1)
-    password_entry.insert(0, "pg63c2")
-
+    password_entry.insert(0, "5d6s7w")
 
     # 创建一个日志队列，用于线程间安全地传递消息
     log_queue = queue.Queue()
 
     # 创建登录按钮
-    login_button = tk.Button(window, text="登录学习", command=lambda: on_login_button_click(username_entry, password_entry
-                                                                                , login_button, log_queue))
+    login_button = tk.Button(window, text="登录学习", command=lambda: show_captcha_window(window, login_button, username_entry, password_entry, log_queue))
     login_button.grid(row=2, column=0, columnspan=2)
+
     # 创建一个文本框用于显示学习进度和日志
     result_text = tk.Text(window, width=50, height=20)
     result_text.grid(row=3, column=0, columnspan=2)
@@ -525,7 +596,6 @@ def create_ui():
 
     # 运行主循环
     window.mainloop()
-
 
 if __name__ == '__main__':
     create_ui()
