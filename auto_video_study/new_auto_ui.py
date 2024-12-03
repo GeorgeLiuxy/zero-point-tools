@@ -1,5 +1,6 @@
 import base64
 import datetime
+import json
 import queue
 import sys
 import threading
@@ -10,6 +11,12 @@ from tkinter import messagebox
 import requests
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
+import subprocess
+
+from auto_video_study.utils import base64_encode
+
+# JavaScript 文件路径
+js_file = 'encrypt.js'
 
 START_DATE = datetime.date(2024, 11, 28)  # 示例日期，你可以选择程序首次运行的日期
 
@@ -19,11 +26,15 @@ login_url = "https://portalapi.tlsjyy.com.cn/api/login/login"
 def getCourseAndChapters(headers, my_course_params):
     # 1. 获取“我的课程”接口
     my_course_url = "https://peixunapi.tlsjyy.com.cn/api/course/my_course"
+    data = {
+        'body': 'GBO1q/ezvvM1wtCIwXOTG/p77/nf88vNaMuI2JnrY4IQPPsSnnlo6PrMmj9tZmlv/rHZKAltEbb0xlV7cX+l2Enl1IUp4IAy7phOVW9JBUKK9Y/4LDslMBQVTo5WKhQNB4mMHpoWwCWIjLEt0BX982AM4T750O/kBOphxc9VOnLfEyKSTA+W1upNdcHDPSO+Nn7NTovoCX5980o7+ulP3b01wWiOZfPGVZfcd/x6WRHAMLPUGawjVtPTyv5sr/YWQE902UIM5PDHAn+dXUeBdj8qMSmUIflxvQN5ZDqM+MQtfRyMRlffQbgtCE19mRpxitZyWlwDhRqSUmyLuMVnAQ=='
+    }
+    print(f' params : {data}')
     # 发送GET请求获取我的课程
-    my_course_response = requests.get(my_course_url, headers=headers, params=my_course_params, timeout=10)
+    my_course_response = requests.post(my_course_url, headers=headers, json=data, timeout=10)
     if my_course_response.status_code == 200:
         my_course_data = my_course_response.json()
-        # print("我的课程:", my_course_data)
+        print("我的课程:", my_course_data)
     else:
         print("获取我的课程失败，状态码:", my_course_response.status_code)
     chapter_datas = []
@@ -55,44 +66,54 @@ def encode_base64(data):
     return encoded_bytes.decode('utf-8')
 
 
-def login(username, password):
+def login(username, password, log_queue):
     global headers
-    data = {
-        "username": encode_base64(username),
-        "password": encode_base64(password)
-    }
-    # 发送POST请求进行登录
-    login_response = requests.post(login_url, data=data, timeout=10)
-    # 打印返回的响应内容（通常会是JSON格式）
-    if login_response.status_code == 200:
-        # 解析返回的JSON响应
-        login_data = login_response.json()
-        data = login_data['data']
-        print("登录成功，返回数据:", login_data)
-        # 设置请求头，模拟浏览器行为
-        headers = {
-            "pragma": "no-cache",
-            "cache-control": "no-cache",
-            "sec-ch-ua-platform": "macOS",
-            "authorization": data['access_token'],
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-            "accept": "application/json, text/plain, */*",
-            "sec-ch-ua": "Google Chrome;v=131, Chromium;v=131, Not_A Brand;v=24",
-            "content-type": "application/json;charset=UTF-8",
-            "sec-ch-ua-mobile": "?0",
-            "origin": "https://peixun.tlsjyy.com.cn",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-dest": "empty",
-            "referer": "https://peixun.tlsjyy.com.cn/",
-            "accept-encoding": "gzip, deflate, br, zstd",
-            "accept-language": "zh-CN,zh;q=0.9",
-            "priority": "u=1, i"
+    try:
+        data = {
+            "username": encode_base64(username),
+            "password": encode_base64(password)
         }
-
-
-    else:
-        print("登录失败，状态码:", login_response.status_code)
+        # 发送POST请求进行登录
+        login_response = requests.post(login_url, data=data, timeout=10)
+        # 打印返回的响应内容（通常会是JSON格式）
+        if login_response.status_code == 200:
+            # 解析返回的JSON响应
+            login_data = login_response.json()
+            if login_data['status'] == 200:
+                data = login_data['data']
+                print("登录成功，返回数据:", login_data)
+                # 设置请求头，模拟浏览器行为
+                headers = {
+                    "pragma": "no-cache",
+                    "cache-control": "no-cache",
+                    "sec-ch-ua-platform": "macOS",
+                    "authorization": data['access_token'],
+                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+                    "accept": "application/json, text/plain, */*",
+                    "sec-ch-ua": "Google Chrome;v=131, Chromium;v=131, Not_A Brand;v=24",
+                    "content-type": "application/json;charset=UTF-8",
+                    "sec-ch-ua-mobile": "?0",
+                    "origin": "https://peixun.tlsjyy.com.cn",
+                    "sec-fetch-site": "same-site",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-dest": "empty",
+                    "referer": "https://peixun.tlsjyy.com.cn/",
+                    "accept-encoding": "gzip, deflate, br, zstd",
+                    "accept-language": "zh-CN,zh;q=0.9",
+                    "priority": "u=1, i"
+                }
+            else:
+                log_queue.put(f"登录失败，状态码:{login_data['status']}")
+                print("登录失败，状态码:", login_data['status'])
+                return None
+        else:
+            print("登录失败，状态码:", login_response.status_code)
+            log_queue.put(f"登录失败，状态码:{login_response.status_code}")
+            return None
+    except Exception as e:
+        log_queue.put(f"请求发生异常:{e}")
+        print("请求发生异常:", e)
+        return None
     return headers
 
 
@@ -241,14 +262,32 @@ def update_log(result_text_widget, log_queue):
 
 def login_study(username, password, log_queue):
     if username and password:
-        headers = login(username, password)
-        log_queue.put("登录成功，加载课程章节...\n")
+        headers = login(username, password, log_queue)
+        if headers:
+            log_queue.put("登录成功，加载课程章节...\n")
 
-    # 模拟选择的课程参数
-        my_course_params_bx = {'train_id': 1701, 'type': 1}
-        my_course_params_xx = {'train_id': 1701, 'type': 2}
+        # 模拟选择的课程参数
+            my_course_params_bx = {'train_id': 1701, 'type': 1}
+            my_course_params_xx = {'train_id': 1701, 'type': 2}
+            # 使用 subprocess 执行 Node.js 脚本并获取返回结果
+            result_bx = subprocess.run(['node', js_file, base64_encode(json.dumps(my_course_params_bx))], capture_output=True, text=True)
+            result_xx = subprocess.run(['node', js_file, base64_encode(json.dumps(my_course_params_xx))], capture_output=True, text=True)
 
-        start_study(headers, [my_course_params_bx, my_course_params_xx], log_queue)
+            # 输出加密结果
+            if result_bx.returncode == 0:
+                print("Encrypted Data:", result_bx.stdout.strip())
+            else:
+                print("Error:", result_bx.stderr)
+
+            # 输出加密结果
+            if result_xx.returncode == 0:
+                print("Encrypted Data:", result_xx.stdout.strip())
+            else:
+                print("Error:", result_xx.stderr)
+
+            start_study(headers, [result_bx.stdout.strip(), result_xx.stdout.strip()], log_queue)
+        else:
+            log_queue.put("登录失败，请检查用户名和密码\n")
     else:
         messagebox.showerror("输入错误", "请填写用户名和密码")
 
@@ -261,12 +300,12 @@ def create_ui():
     tk.Label(window, text="用户名:").grid(row=0, column=0)
     username_entry = tk.Entry(window)
     username_entry.grid(row=0, column=1)
-    username_entry.insert(0, "")
+    username_entry.insert(0, "15754915432")
 
     tk.Label(window, text="密码:").grid(row=1, column=0)
-    password_entry = tk.Entry(window, show="*")
+    password_entry = tk.Entry(window)
     password_entry.grid(row=1, column=1)
-    password_entry.insert(0, "")
+    password_entry.insert(0, "Dcy520886")
 
 
     # 创建一个日志队列，用于线程间安全地传递消息

@@ -11,7 +11,6 @@ from tkinter import messagebox
 import math
 import pytesseract
 import requests
-import vlc
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
 from PIL import Image
@@ -352,69 +351,67 @@ def watch_video(headers, section, studyCode, recordId, video_url, log_queue):
     else:
         log_queue.put(f"获取用户id，状态码：{response.status_code}\n")
     # 模拟视频播放
-    def play_video():
-        video_duration = section['total_time']  # 假设视频的总时长，单位秒
-        current_time = section['study_time']  # 假设当前播放时间
-        log_queue.put(f"开始播放视频：{video_url}, 视频开始时间：{current_time}秒\n")
-        platformId = 4
-        # 当前时间初始化
-        current_time = 0
-        # 计算每15秒保存进度的时刻
-        last_saved_time = 0
-        # 模拟视频播放
-        while current_time < video_duration:
-            # 每秒播放一秒
-            time.sleep(1)  # 模拟视频播放的延迟
-            current_time += 1
+    video_duration = section['total_time']  # 假设视频的总时长，单位秒
+    current_time = section['study_time']  # 假设当前播放时间
+    log_queue.put(f"开始播放视频：{recordId}, 视频开始时间：{current_time}秒\n")
+    platformId = 4
+    # 当前时间初始化
+    current_time = 0
+    # 计算每15秒保存进度的时刻
+    last_saved_time = 0
+    # 模拟视频播放
+    while current_time < video_duration:
+        # 每秒播放一秒
+        time.sleep(1)  # 模拟视频播放的延迟
+        current_time += 11
 
-            # 每15秒保存一次进度
-            if current_time - last_saved_time >= 15:
-                save_view_process_record(platformId, current_time)
-                last_saved_time = current_time  # 更新上次保存进度的时间
-                # 将播放进度日志输出到日志队列
-                # log_queue.put(f"当前播放进度：{current_time}/{video_duration}秒\n")
+        # 每15秒保存一次进度
+        if current_time - last_saved_time >= 22:
+            save_view_process_record(platformId, current_time,studyCode,recordId,section,user_id,video_url,log_queue)
+            last_saved_time = current_time  # 更新上次保存进度的时间
+            # 将播放进度日志输出到日志队列
+            log_queue.put(f"当前播放进度：{current_time}/{video_duration}秒\n")
 
-        # 视频播放结束时，最后一次保存进度
-        save_view_process_record(platformId, video_duration)
-        log_queue.put(f"视频播放结束，最终进度：{current_time}/{video_duration}秒\n")
-        # 调用更新进度接口
-        # 构造请求参数 section['plan_id'], section['course_id'], section['chapter_id'], section['section_id'],
-        # studyCode: this.video.studyCode,
-        # isEnd: e || this.video.ended,
-        # updateRedisMap: this.video.updateRedisMap,
-        # recordId: this.video.recordId,
-        # sectionId: this.sectionId,
-        # time: this.time,
-        # signId: [this.platformId, this.planId, this.userInfo.userId].join("#")
-        log_queue.put(f"播放视频结束：{video_url}\n")
+    # 视频播放结束时，最后一次保存进度
+    save_view_process_record(platformId, video_duration,studyCode,recordId,section,user_id,video_url,log_queue)
+    log_queue.put(f"视频播放结束，最终进度：{current_time}/{video_duration}秒\n")
+    # 调用更新进度接口
+    # 构造请求参数 section['plan_id'], section['course_id'], section['chapter_id'], section['section_id'],
+    # studyCode: this.video.studyCode,
+    # isEnd: e || this.video.ended,
+    # updateRedisMap: this.video.updateRedisMap,
+    # recordId: this.video.recordId,
+    # sectionId: this.sectionId,
+    # time: this.time,
+    # signId: [this.platformId, this.planId, this.userInfo.userId].join("#")
 
-    def save_view_process_record(platformId, video_duration):
-        data = {
-            'studyCode': studyCode,  # 替换为实际值
-            'isEnd': True,  # 替换为实际值
-            'updateRedisMap': 1,  # 替换为实际值
-            'recordId': recordId,  # 替换为实际值
-            'sectionId': section['section_id'],  # 替换为实际值
-            'time': video_duration,  # 替换为实际值
-            'signId': f"{platformId}#{section['plan_id']}#{user_id}"  # 替换为实际值
-        }
-        print(f'更新进度请求参数:{data}')
-        response = requests.post('https://manage.yzspeixun.com//yzsApi/course/takeRecord', params=data, headers=headers,
-                                 timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            if data.get('success') and data.get('data') != '违规提交':
-                log_queue.put(f"更新进度成功：{video_url}\n")
-            else:
-                log_queue.put(f"更新进度失败：{data.get('data')}\n")
+
+def save_view_process_record(platformId, video_duration,studyCode,recordId,section,user_id,video_url,log_queue):
+    data = {
+        'studyCode': studyCode,  # 替换为实际值
+        'isEnd': True,  # 替换为实际值
+        'updateRedisMap': 1,  # 替换为实际值
+        'recordId': recordId,  # 替换为实际值
+        'sectionId': section['section_id'],  # 替换为实际值
+        'time': video_duration,  # 替换为实际值
+        'signId': f"{platformId}#{section['plan_id']}#{user_id}"  # 替换为实际值
+    }
+    print(f'更新进度请求参数:{data}')
+    response = requests.post('https://manage.yzspeixun.com//yzsApi/course/takeRecord', params=data, headers=headers,
+                             timeout=10)
+    if response.status_code == 200:
+        data = response.json()
+        if data.get('success') and data.get('data') != '违规提交':
+            log_queue.put(f"更新进度成功：{video_url}\n")
         else:
-            log_queue.put(f"更新进度失败，状态码：{response.status_code}\n")
+            log_queue.put(f"更新进度失败：{data.get('data')}\n")
+    else:
+        log_queue.put(f"更新进度失败，状态码：{response.status_code}\n")
 
-    play_video()
-    # # 创建并启动播放视频的线程
-    # play_thread = threading.Thread(target=play_video)
-    # play_thread.start()
-    # return play_thread  # 返回线程对象，可以在外部管理或等待线程完成
+# # 创建并启动播放视频的线程
+# play_thread = threading.Thread(target=play_video)
+# play_thread.start()
+# return play_thread  # 返回线程对象，可以在外部管理或等待线程完成
 
 
 def start_study(headers, log_queue):
@@ -426,10 +423,11 @@ def start_study(headers, log_queue):
             print(f"查询计划ID {plan_id} 下的课程：")
             sections = get_sections(headers, plan_id, log_queue)
             if sections:
+                log_queue.put(f"一共有{len(sections)}个待学课程\n")
                 for section in sections:
-                    print(f"开始学习课程：{section['course_name']}，章节：{section['chapter_name']}")
+                    log_queue.put(f"开始学习课程：{section['course_name']}，章节：{section['chapter_name']}\n")
                     # 获取视频链接
-                    studyCode, recordId, videoCode, video_url= get_video_url(headers, section['plan_id'], section['course_id'], section['chapter_id'], section['section_id'], log_queue)
+                    studyCode, recordId, videoCode, video_url = get_video_url(headers, section['plan_id'], section['course_id'], section['chapter_id'], section['section_id'], log_queue)
                     if video_url:
                         # 观看视频
                         watch_video(headers, section, studyCode, recordId, video_url, log_queue)
@@ -484,13 +482,16 @@ def get_sections(headers, plan_id, log_queue):
 
 
 def login_study(username, password, log_queue):
-    if username and password:
-        headers = login(username, password, log_queue)
-        log_queue.put("登录成功，加载课程章节...\n")
-        start_study(headers, log_queue)
-        log_queue.put("学习计划已完成...\n")
-    else:
-        messagebox.showerror("输入错误", "请填写用户名和密码")
+    try:
+        if username and password:
+            headers = login(username, password, log_queue)
+            log_queue.put("登录成功，加载课程章节...\n")
+            start_study(headers, log_queue)
+            log_queue.put("学习计划已完成...\n")
+        else:
+            messagebox.showerror("输入错误", "请填写用户名和密码")
+    except Exception as e:
+        log_queue.put(f"登录失败：{e}\n")
 
 
 def create_ui():
@@ -501,12 +502,12 @@ def create_ui():
     tk.Label(window, text="用户名:").grid(row=0, column=0)
     username_entry = tk.Entry(window)
     username_entry.grid(row=0, column=1)
-    username_entry.insert(0, "")
+    username_entry.insert(0, "150424199405273020")
 
     tk.Label(window, text="密码:").grid(row=1, column=0)
-    password_entry = tk.Entry(window, show="*")
+    password_entry = tk.Entry(window)
     password_entry.grid(row=1, column=1)
-    password_entry.insert(0, "")
+    password_entry.insert(0, "gw9gch")
 
 
     # 创建一个日志队列，用于线程间安全地传递消息

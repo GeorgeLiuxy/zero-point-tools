@@ -67,14 +67,15 @@ def parse_captcha(captcha_image_path):
 
 # 验证验证码
 def valid(session, headers, captcha_text, username, password):
-    valid_url = "https://gp.chinahrt.com/gp6/system/manager/login/valid"
+    valid_url = "https://cme28.91huayi.com/ashx/loginJson.ashx"
     # 登录参数
     data = {
-        "from": "1",
-        "userName": username,
-        "password": md5_encrypt(password),
-        "platformId": 88,
-        "captcha": captcha_text
+        "UserName": username,
+        "Password": md5_encrypt(password),
+        "loginType": 88,
+        "ScreenX": 1680,
+        "ScreenY": 1050,
+        "code": captcha_text
     }
 
     # 发送 POST 请求进行登录
@@ -83,13 +84,14 @@ def valid(session, headers, captcha_text, username, password):
         return session, response.json()
 
 
-def get_current_time_stamp():
-    # 获取当前的日期和时间
-    now = datetime.now()
-    # 获取时间戳（秒级），并转换为毫秒
-    timestamp_milliseconds = int(now.timestamp() * 1000)
-    print(f"毫秒级时间戳: {timestamp_milliseconds}")
-    return timestamp_milliseconds
+def get_current_time_HHMMSS():
+    # 获取当前时间
+    current_time = datetime.now()
+    # 格式化时间为 "15:39:55"
+    formatted_time = current_time.strftime("%H:%M:%S")
+    # 输出格式化后的时间
+    # print(formatted_time)
+    return formatted_time
 
 
 def generateHeaders(data):
@@ -141,9 +143,12 @@ def login(username, password, log_queue, captcha):
         # 校验验证码
         session, data = valid(session, headers, captcha, username, password)
         print(f'登录校验结果：{data}')
-        if data and data['success']:
-            headers = generateHeaders(data)
-            session_data = getSession(session, headers)
+        if data is not None:
+            data[0]
+            #[{"userId":"75558b91-dbb2-436e-890a-b23476b777b8","userName":"a11832571","sessionType":"true","provinceID":"6d56144e-73e2-4b6e-ac26-9b5e0102ee56","msg":"ok","pwdComplex":1,"pwdUpdateUrl":"https://hyuser2.91huayi.com/AccountCenter/setpwd.aspx?tag=cme&uid=75558b91-dbb2-436e-890a-b23476b777b8&user_name=a11832571","sign":null,"zzfkSubQuestionUrl":null}]
+            if data[0] and data[0]['msg'] == 'ok':
+                headers = generateHeaders(data)
+                session_data = getSession(session, headers)
             log_queue.put("登录成功，加载课程章节...\n")
         else:
             messagebox.showerror("登录失败", "验证码或账号密码错误，请重新输入")
@@ -606,25 +611,21 @@ def show_captcha_window(window, login_button, username_entry, password_entry, lo
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
-    kaptcha_url = f"https://gp.chinahrt.com/gp6/system/manager/kaptcha?d={get_current_time_stamp()}"
+    kaptcha_url = f"https://cme28.91huayi.com/secure/CheckCode.aspx?id=15:39:55?id={get_current_time_HHMMSS()}"
     captcha_image = get_captcha_image(headers, kaptcha_url)
     if captcha_image:
         # 创建新窗口显示验证码
         captcha_window = tk.Toplevel(window)
         captcha_window.title("请输入验证码")
-
         # 将PIL图片转换为Tkinter兼容的格式
         captcha_photo = ImageTk.PhotoImage(captcha_image)
-
         # 创建一个Label来显示验证码图片
         captcha_label = tk.Label(captcha_window, image=captcha_photo)
         captcha_label.image = captcha_photo  # 保存对图像的引用
         captcha_label.pack()
-
         # 创建输入框让用户输入验证码
         captcha_entry = tk.Entry(captcha_window)
         captcha_entry.pack()
-
         # 创建一个提交按钮
         def submit_captcha():
             captcha = captcha_entry.get()
@@ -642,18 +643,18 @@ def show_captcha_window(window, login_button, username_entry, password_entry, lo
 # 创建UI界面
 def create_ui():
     window = tk.Tk()
-    window.title("赤峰市专业技术人员继续教育基地自动学习平台")
+    window.title("华医网自动学习平台")
 
     # 创建用户名和密码输入框
     tk.Label(window, text="用户名:").grid(row=0, column=0)
     username_entry = tk.Entry(window)
     username_entry.grid(row=0, column=1)
-    username_entry.insert(0, "150429199706061912")
+    username_entry.insert(0, "a11832571")
 
     tk.Label(window, text="密码:").grid(row=1, column=0)
     password_entry = tk.Entry(window, show="*")
     password_entry.grid(row=1, column=1)
-    password_entry.insert(0, "5d6s7w")
+    password_entry.insert(0, "616263zq")
 
     # 创建一个日志队列，用于线程间安全地传递消息
     log_queue = queue.Queue()
