@@ -1,7 +1,7 @@
 import matplotlib
 
 from gridsca import dasca_f
-from new_code.DQN import DQNAgent
+from DQN import DQNAgent
 
 matplotlib.use('TkAgg')  # 确保使用支持交互的后端
 import math
