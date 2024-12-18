@@ -1,0 +1,22 @@
+{
+    "3aacdfa7-d72c-4968-b561-489f36e9953b": {
+        "info": {
+            "width": 1680,
+            "height": 1050,
+            "x": 0,
+            "y": 0,
+            "name": null
+        },
+        "mode": "shared"
+    },
+    "ed13f602-01f8-43f5-a1d6-0bedb009c896": {
+        "info": {
+            "width": 1920,
+            "height": 1080,
+            "x": -326,
+            "y": 1050,
+            "name": null
+        },
+        "mode": "shared"
+    }
+}

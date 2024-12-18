@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>远程桌面控制</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // 设置 WebSocket 连接到服务端
+    const serverIp = '129.0.0.1'; // 替换为服务端的IP地址
+    const socket = new WebSocket(`ws://${serverIp}:8765`);
+
+    socket.onopen = function() {
+        console.log("已连接到服务器");
+    };
+
+    socket.onmessage = function(event) {
+        const message = JSON.parse(event.data);
+
+        if (message.type === 'screen') {
+            // 处理来自服务端的屏幕图像（base64 编码）
+            const img = new Image();
+            img.src = 'data:image/png;base64,' + message.data;
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
+        }
+    };
+
+    socket.onclose = function() {
+        console.log("已断开与服务器的连接");
+    };
+
+    // 鼠标点击事件
+    canvas.addEventListener('click', function(e) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // 发送鼠标点击事件到服务端
+        const message = JSON.stringify({
+            type: 'mouse',
+            action: 'click',
+            x: x,
+            y: y
+        });
+        socket.send(message);
+    });
+
+    // 鼠标移动事件
+    canvas.addEventListener('mousemove', function(e) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // 发送鼠标移动事件到服务端
+        const message = JSON.stringify({
+            type: 'mouse',
+            action: 'move',
+            x: x,
+            y: y
+        });
+        socket.send(message);
+    });
+
+    // 鼠标滚动事件
+    canvas.addEventListener('wheel', function(e) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const dy = e.deltaY;
+
+        // 发送鼠标滚动事件到服务端
+        const message = JSON.stringify({
+            type: 'mouse',
+            action: 'scroll',
+            x: x,
+            y: y,
+            dy: dy
+        });
+        socket.send(message);
+    });
+
+    // 键盘事件
+    window.addEventListener('keydown', function(e) {
+        // 发送键盘按下事件到服务端
+        const message = JSON.stringify({
+            type: 'keyboard',
+            action: 'press',
+            key: e.key
+        });
+        socket.send(message);
+    });
+
+    window.addEventListener('keyup', function(e) {
+        // 发送键盘释放事件到服务端
+        const message = JSON.stringify({
+            type: 'keyboard',
+            action: 'release',
+            key: e.key
+        });
+        socket.send(message);
+    });
+</script>
+</body>
+</html>

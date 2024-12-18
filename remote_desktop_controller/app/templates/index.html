@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>远程桌面控制</title>
+</head>
+<body>
+<h1>选择窗口控制</h1>
+<ul>
+    {% for window_id, window in window_mapping.items() %}
+    <li>
+        <h2>{{ window.title }}</h2>
+        <p>位置: {{ window.left }}, {{ window.top }}</p>
+        <p>大小: {{ window.width }}x{{ window.height }}</p>
+        <button onclick="controlWindow({{ window_id }}, 'click')">点击</button>
+        <button onclick="controlWindow({{ window_id }}, 'scroll')">滚动</button>
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+    function controlWindow(windowId, action) {
+        fetch(`/control/${windowId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ action: action })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert('控制成功');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+</script>
+</body>
+</html>
