@@ -1,501 +1,501 @@
-Satellite_ID,Timestamp,Value,Category,Control_Status
-Satellite_A,2023-01-01 00:00:00,6994.515331409746,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 00:10:00,6992.469569158724,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 00:20:00,6975.748663496633,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 00:30:00,7012.502373397432,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 00:40:00,6993.273751732048,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 00:50:00,6988.6756420494185,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 01:00:00,7030.265395670681,1,Entering controlled maintenance
-Satellite_A,2023-01-01 01:10:00,7009.183399696501,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 01:20:00,7012.866745502015,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 01:30:00,6985.010923567999,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 01:40:00,7024.907907566273,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 01:50:00,6995.761255730186,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 02:00:00,7006.751091355026,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 02:10:00,7010.12371505307,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 02:20:00,6994.519095475659,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 02:30:00,6990.185290617064,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 02:40:00,7002.8938699382215,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 02:50:00,7011.288471163598,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 03:00:00,7001.396393134586,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 03:10:00,7011.363505183338,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 03:20:00,6989.570557297405,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 03:30:00,7009.31068842099,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 03:40:00,7014.83138189467,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 03:50:00,7013.592420021474,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 04:00:00,7031.566109985592,1,Entering controlled maintenance
-Satellite_A,2023-01-01 04:10:00,7018.709536939711,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 04:20:00,7016.854960751916,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 04:30:00,7020.761580884201,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 04:40:00,7010.652370566404,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 04:50:00,7014.586881106699,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 05:00:00,7000.34422246018,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 05:10:00,7009.2493803563075,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 05:20:00,7035.074997362514,1,Entering controlled maintenance
-Satellite_A,2023-01-01 05:30:00,7027.386683103043,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 05:40:00,7024.2516570496255,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 05:50:00,7006.705447905137,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 06:00:00,7022.25764800356,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 06:10:00,7027.6815341477595,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 06:20:00,7016.37800509037,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 06:30:00,7015.77138914763,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 06:40:00,7007.000875420557,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 06:50:00,7017.239630224997,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 07:00:00,7010.683192045274,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 07:10:00,7018.0946407275,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 07:20:00,7026.987050687675,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 07:30:00,7022.477574103098,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 07:40:00,7013.272818037134,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 07:50:00,6999.071795001897,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 08:00:00,7010.359894137838,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 08:10:00,7022.030013286605,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 08:20:00,7023.342056837912,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 08:30:00,7020.420965424965,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 08:40:00,7027.92694504062,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 08:50:00,7009.1395032697465,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 09:00:00,7005.242900580596,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 09:10:00,7030.66675055488,1,Entering controlled maintenance
-Satellite_A,2023-01-01 09:20:00,7025.662539635015,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 09:30:00,7011.997638743136,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 09:40:00,7020.659523056356,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 09:50:00,6996.745188892607,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 10:00:00,7002.247351596352,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 10:10:00,7033.362951450422,1,Entering controlled maintenance
-Satellite_A,2023-01-01 10:20:00,7004.707326708304,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 10:30:00,7014.460995238642,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 10:40:00,7008.572893179081,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 10:50:00,7019.538440351397,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 11:00:00,7025.651439692325,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 11:10:00,7006.218029503264,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 11:20:00,7012.650703067024,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 11:30:00,7021.543145062291,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 11:40:00,7009.068722623929,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 11:50:00,7008.359239697756,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 12:00:00,7020.1608487636095,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 12:10:00,7013.824606078423,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 12:20:00,6998.222144315958,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 12:30:00,7008.4512933063825,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 12:40:00,7011.034954635657,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 12:50:00,7005.162810949113,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 13:00:00,7009.221385920896,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 13:10:00,6987.924219351038,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 13:20:00,6988.110609415621,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 13:30:00,7000.623748026767,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 13:40:00,6989.766549795025,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 13:50:00,7007.717669979929,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 14:00:00,7011.9134018739005,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 14:10:00,6988.771264677844,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 14:20:00,7000.5592270828765,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 14:30:00,7004.519012853757,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 14:40:00,7006.736117414508,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 14:50:00,6999.5703092818385,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 15:00:00,7017.584198285996,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 15:10:00,6988.241907120973,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 15:20:00,6995.390753905213,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 15:30:00,7012.2767693812,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 15:40:00,7011.348930508311,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 15:50:00,6997.582063027071,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 16:00:00,6997.909378634014,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 16:10:00,6986.347255644764,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 16:20:00,6986.697636411982,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 16:30:00,6990.371885778175,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 16:40:00,6988.029135101374,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 16:50:00,6997.450609887936,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 17:00:00,6991.932716908863,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 17:10:00,6993.547051093469,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 17:20:00,6978.792304163486,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 17:30:00,6982.991918591847,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 17:40:00,6990.0618661421395,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 17:50:00,7008.63525382078,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 18:00:00,6996.199754505063,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 18:10:00,6983.760002595368,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 18:20:00,6984.194458056947,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 18:30:00,6989.165461842112,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 18:40:00,6972.5880260946,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 18:50:00,6984.0948282071995,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 19:00:00,6995.564282301945,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 19:10:00,6976.734306142692,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 19:20:00,7010.921585673984,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 19:30:00,6994.602400974926,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 19:40:00,6977.787478915694,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 19:50:00,6992.165098922449,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 20:00:00,6998.412228239111,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 20:10:00,6996.182376553247,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 20:20:00,6999.796416361864,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 20:30:00,6987.6235489160545,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 20:40:00,6994.151810063254,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 20:50:00,7008.313936532014,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 21:00:00,6985.76870150055,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 21:10:00,6987.256090419247,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 21:20:00,6997.398827145835,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 21:30:00,6986.049908978205,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 21:40:00,6976.322730512848,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 21:50:00,6984.058698218434,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 22:00:00,6986.01013503967,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 22:10:00,6981.872768816002,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 22:20:00,6990.396988590386,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 22:30:00,6985.08734797453,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 22:40:00,6996.752793968734,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 22:50:00,6997.353552421027,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 23:00:00,7001.660400046982,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 23:10:00,6985.470571255644,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 23:20:00,6986.68508053106,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 23:30:00,6984.9790303634745,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 23:40:00,6983.496539468617,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-01 23:50:00,6993.444679596943,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 00:00:00,6998.800160024737,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 00:10:00,6980.159833650601,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 00:20:00,6993.123671365005,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 00:30:00,7004.653358777821,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 00:40:00,6993.563478358278,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 00:50:00,7000.496000934786,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 01:00:00,6995.40564626849,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 01:10:00,6994.047843027841,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 01:20:00,7002.562696478387,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 01:30:00,7003.642850275707,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 01:40:00,7005.852806487345,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 01:50:00,7003.13837268791,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 02:00:00,7002.350247965013,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 02:10:00,7007.002919605438,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 02:20:00,7020.16927504877,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 02:30:00,7004.112044599673,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 02:40:00,7009.905773681592,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 02:50:00,7007.569302020018,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 03:00:00,7029.401793138819,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 03:10:00,7020.951788412188,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 03:20:00,7022.7775558122485,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 03:30:00,7008.803168847567,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 03:40:00,7022.228351020808,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 03:50:00,7004.326622795538,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 04:00:00,7007.902121253227,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 04:10:00,7006.4170239207015,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 04:20:00,7014.365061337728,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 04:30:00,7005.750849492952,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 04:40:00,7008.700256609258,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 04:50:00,7011.909244093889,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 05:00:00,7013.902521430819,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 05:10:00,7016.3196297108025,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 05:20:00,7001.525779573989,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 05:30:00,7004.231338231007,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 05:40:00,7010.366070221068,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 05:50:00,7014.969077037645,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 06:00:00,7012.7554273752785,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 06:10:00,7019.603376661402,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 06:20:00,7031.260358699707,1,Entering controlled maintenance
-Satellite_A,2023-01-02 06:30:00,7023.082847785471,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 06:40:00,7023.807780931682,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 06:50:00,7013.00288607866,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 07:00:00,7002.848379570356,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 07:10:00,7035.88796447202,1,Entering controlled maintenance
-Satellite_A,2023-01-02 07:20:00,7001.432242089776,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 07:30:00,7012.958822235602,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 07:40:00,7029.643769191571,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 07:50:00,7031.8872707415485,1,Entering controlled maintenance
-Satellite_A,2023-01-02 08:00:00,7029.140711107574,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 08:10:00,7022.748927960887,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 08:20:00,7021.0543543905915,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 08:30:00,7022.376986852741,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 08:40:00,7024.403772240475,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 08:50:00,7052.477204061908,1,Entering controlled maintenance
-Satellite_A,2023-01-02 09:00:00,7017.448848149335,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 09:10:00,7028.412686735768,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 09:20:00,7041.084618599112,1,Entering controlled maintenance
-Satellite_A,2023-01-02 09:30:00,7036.005841596186,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-02 09:40:00,7004.007794953674,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 09:50:00,7000.469126140252,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 10:00:00,7023.468550135195,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 10:10:00,7021.631854696718,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 10:20:00,7029.533827489316,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 10:30:00,7022.249164543369,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 10:40:00,6995.161936298223,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 10:50:00,7031.154788136507,1,Entering controlled maintenance
-Satellite_A,2023-01-02 11:00:00,7016.90228256419,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 11:10:00,7032.684916898291,1,Entering controlled maintenance
-Satellite_A,2023-01-02 11:20:00,7016.086218837834,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 11:30:00,7012.568031712582,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 11:40:00,7020.737702630438,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 11:50:00,7043.006138338554,1,Entering controlled maintenance
-Satellite_A,2023-01-02 12:00:00,7029.174023554257,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 12:10:00,7017.504238735067,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 12:20:00,7015.040426112008,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 12:30:00,7037.440130358399,1,Entering controlled maintenance
-Satellite_A,2023-01-02 12:40:00,7041.935895829636,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-02 12:50:00,7031.008943766233,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-02 13:00:00,7023.57654894087,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 13:10:00,7014.869063169917,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 13:20:00,7016.794221329407,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 13:30:00,7008.066909318685,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 13:40:00,7022.451148486264,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 13:50:00,7024.048472343419,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 14:00:00,7033.563623417738,1,Entering controlled maintenance
-Satellite_A,2023-01-02 14:10:00,7002.58643286406,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 14:20:00,7011.08027616512,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 14:30:00,7029.215696748368,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 14:40:00,7033.605896182376,1,Entering controlled maintenance
-Satellite_A,2023-01-02 14:50:00,7026.155150474574,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 15:00:00,7007.82230716229,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 15:10:00,7014.846094358647,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 15:20:00,7029.004989229425,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 15:30:00,7039.904792935385,1,Entering controlled maintenance
-Satellite_A,2023-01-02 15:40:00,7004.836970880842,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 15:50:00,7022.871811296236,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 16:00:00,7016.705316997859,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 16:10:00,7011.088479785861,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 16:20:00,7033.963443462809,1,Entering controlled maintenance
-Satellite_A,2023-01-02 16:30:00,7010.725777561231,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 16:40:00,7030.220040472667,1,Entering controlled maintenance
-Satellite_A,2023-01-02 16:50:00,7006.860572647644,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 17:00:00,6999.099738431634,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 17:10:00,7025.514113767635,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 17:20:00,7012.704442234113,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 17:30:00,7017.752341812034,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 17:40:00,7007.08493583858,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 17:50:00,7012.690286949385,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 18:00:00,7003.562057560868,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 18:10:00,7014.875366637058,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 18:20:00,7017.130506003028,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 18:30:00,6990.7614086010035,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 18:40:00,6999.547104305633,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 18:50:00,7002.816069725112,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 19:00:00,7020.528171540026,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 19:10:00,7013.004879830541,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 19:20:00,7006.970055597996,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 19:30:00,7007.187216242786,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 19:40:00,7012.803311742782,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 19:50:00,7024.189189821657,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 20:00:00,7000.5709917560935,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 20:10:00,7005.535293766312,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 20:20:00,6994.162003084647,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 20:30:00,7008.707952481205,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 20:40:00,6990.3979197432045,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 20:50:00,7007.697362065678,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 21:00:00,7003.229703007094,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 21:10:00,7008.870657454276,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 21:20:00,7000.362585637731,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 21:30:00,6988.837828688541,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 21:40:00,7003.526415924394,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 21:50:00,7006.3667926606595,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 22:00:00,7023.902133119298,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 22:10:00,7011.316372834116,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 22:20:00,6999.112187451486,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 22:30:00,7004.300054020793,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 22:40:00,7001.635800418379,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 22:50:00,7001.86068046169,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 23:00:00,7005.858863622154,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 23:10:00,6996.722748124664,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 23:20:00,6996.1947526059275,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 23:30:00,6985.933688853538,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 23:40:00,6994.252432773301,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-02 23:50:00,6985.716629991338,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 00:00:00,6998.360386603189,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 00:10:00,6999.122292259816,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 00:20:00,7019.577914774907,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 00:30:00,7007.863686675205,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 00:40:00,6990.531795731558,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 00:50:00,7009.312732020733,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 01:00:00,6998.580112309053,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 01:10:00,6983.350450164185,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 01:20:00,6993.758308828668,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 01:30:00,6988.853182479597,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 01:40:00,7009.274646694595,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 01:50:00,6990.582488831577,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 02:00:00,6973.953096156801,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 02:10:00,7010.226523778897,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 02:20:00,7007.202073188027,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 02:30:00,7000.077246256756,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 02:40:00,7013.121756542683,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 02:50:00,7001.031614674647,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 03:00:00,7010.6091935553,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 03:10:00,6992.186232460333,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 03:20:00,7001.235309721011,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 03:30:00,7003.462211322322,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 03:40:00,7010.3708697396505,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 03:50:00,7024.104780211677,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 04:00:00,6996.88598769578,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 04:10:00,6976.281464820305,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 04:20:00,6984.52321363797,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 04:30:00,7020.485852187215,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 04:40:00,7018.31886755983,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 04:50:00,6998.3639195197975,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 05:00:00,6992.714524671499,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 05:10:00,7005.97202265538,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 05:20:00,7017.643073896678,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 05:30:00,7010.141288345904,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 05:40:00,7013.404506688859,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 05:50:00,7006.73207987522,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 06:00:00,7025.8438317146065,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 06:10:00,7022.920551662604,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 06:20:00,7011.366527331035,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 06:30:00,7007.248321030914,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 06:40:00,7009.162311412093,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 06:50:00,7000.371372086661,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 07:00:00,7015.257425701907,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 07:10:00,7002.824873860243,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 07:20:00,7011.150192139982,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 07:30:00,7007.918850682575,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 07:40:00,7026.9507606587895,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 07:50:00,7010.884652254052,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 08:00:00,7025.385952916913,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 08:10:00,7013.571631740398,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 08:20:00,7000.671671242714,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 08:30:00,7025.12191259661,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 08:40:00,7018.55166965631,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 08:50:00,7010.397381807257,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 09:00:00,6995.169522052958,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 09:10:00,7009.308428373714,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 09:20:00,7028.023135402781,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 09:30:00,7020.5559025638095,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 09:40:00,7014.961260567158,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 09:50:00,7039.942935049514,1,Entering controlled maintenance
-Satellite_A,2023-01-03 10:00:00,7028.396287346698,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 10:10:00,7030.50351066072,1,Entering controlled maintenance
-Satellite_A,2023-01-03 10:20:00,7027.300673481327,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 10:30:00,7029.4874222151275,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 10:40:00,7042.403372792971,1,Entering controlled maintenance
-Satellite_A,2023-01-03 10:50:00,7017.051458240307,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 11:00:00,7030.315932748922,1,Entering controlled maintenance
-Satellite_A,2023-01-03 11:10:00,7044.024259916342,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 11:20:00,7009.623627298469,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 11:30:00,7031.343464250861,1,Entering controlled maintenance
-Satellite_A,2023-01-03 11:40:00,7034.811631124105,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 11:50:00,7027.793854621574,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 12:00:00,7028.773720632999,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 12:10:00,7008.750100747619,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 12:20:00,7029.03336796783,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 12:30:00,7035.041551443345,1,Entering controlled maintenance
-Satellite_A,2023-01-03 12:40:00,7032.250593215097,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 12:50:00,7039.325651188399,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 13:00:00,7028.99590111224,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 13:10:00,7033.207744812935,1,Entering controlled maintenance
-Satellite_A,2023-01-03 13:20:00,7026.950743221764,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 13:30:00,7016.428367901475,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 13:40:00,7035.693972270348,1,Entering controlled maintenance
-Satellite_A,2023-01-03 13:50:00,7024.5562682536765,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 14:00:00,7032.71328497224,1,Entering controlled maintenance
-Satellite_A,2023-01-03 14:10:00,7021.639995296247,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 14:20:00,7020.143799520758,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 14:30:00,7045.9854401545335,1,Entering controlled maintenance
-Satellite_A,2023-01-03 14:40:00,7040.123823945926,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 14:50:00,7026.368836078854,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 15:00:00,7039.6693436081805,1,Entering controlled maintenance
-Satellite_A,2023-01-03 15:10:00,7017.506578628354,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 15:20:00,7021.288556783686,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 15:30:00,7053.539517125807,1,Entering controlled maintenance
-Satellite_A,2023-01-03 15:40:00,7042.755489309343,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 15:50:00,7030.41729307122,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 16:00:00,7036.3633698474805,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 16:10:00,7043.1152918027865,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 16:20:00,7023.61709698162,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 16:30:00,7025.60372420434,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 16:40:00,7028.178572488945,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 16:50:00,7026.879824032873,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 17:00:00,7047.739010408913,1,Entering controlled maintenance
-Satellite_A,2023-01-03 17:10:00,7022.246778314385,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 17:20:00,7044.36817197923,1,Entering controlled maintenance
-Satellite_A,2023-01-03 17:30:00,7031.6747292630425,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 17:40:00,7029.032934179309,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 17:50:00,7014.422051265265,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 18:00:00,7015.1566019297015,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 18:10:00,7040.854939016426,1,Entering controlled maintenance
-Satellite_A,2023-01-03 18:20:00,7034.800371345104,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 18:30:00,7032.390813080747,1,Controlled: Maintenance ongoing
-Satellite_A,2023-01-03 18:40:00,7019.2698363414465,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 18:50:00,7025.932656161144,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 19:00:00,7038.9187141469565,1,Entering controlled maintenance
-Satellite_A,2023-01-03 19:10:00,7011.519496876193,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 19:20:00,7034.3452493915065,1,Entering controlled maintenance
-Satellite_A,2023-01-03 19:30:00,7025.646059756528,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 19:40:00,7017.637182903222,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 19:50:00,7009.845395329089,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 20:00:00,7017.215343866545,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 20:10:00,7033.521203781836,1,Entering controlled maintenance
-Satellite_A,2023-01-03 20:20:00,7025.473981453196,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 20:30:00,7024.928700668957,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 20:40:00,7022.118908090623,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 20:50:00,7008.474840424123,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 21:00:00,7021.715242326646,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 21:10:00,7027.919204193744,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 21:20:00,7023.292268388997,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 21:30:00,7015.455758839094,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 21:40:00,7011.162911298013,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 21:50:00,7021.175047857034,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 22:00:00,7013.662024081082,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 22:10:00,7001.639018291709,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 22:20:00,7020.836745953759,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 22:30:00,7007.436296675271,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 22:40:00,7016.22642276387,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 22:50:00,7027.8489319676755,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 23:00:00,7022.493974489248,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 23:10:00,7020.712832662476,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 23:20:00,7017.184123032031,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 23:30:00,7006.940928347986,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 23:40:00,7015.409700385198,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-03 23:50:00,7027.531248029523,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 00:00:00,7019.098084038753,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 00:10:00,7026.756367970669,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 00:20:00,7011.920022075761,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 00:30:00,7006.616639603053,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 00:40:00,6999.778626206362,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 00:50:00,7018.01276321153,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 01:00:00,6990.024363336251,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 01:10:00,7008.2898540448,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 01:20:00,7018.726793525121,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 01:30:00,7018.981281620757,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 01:40:00,7018.802544474544,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 01:50:00,7022.532463058532,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 02:00:00,7009.430676341399,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 02:10:00,7002.366928595976,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 02:20:00,6977.581036594325,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 02:30:00,7018.9400757215235,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 02:40:00,7002.776680338206,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 02:50:00,6999.591585132356,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 03:00:00,7009.651459902225,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 03:10:00,6993.3098994019265,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 03:20:00,7000.524547995873,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 03:30:00,7003.6399906111255,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 03:40:00,7014.9001558563195,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 03:50:00,6999.551283604643,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 04:00:00,6994.712171479976,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 04:10:00,7001.855849796433,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 04:20:00,6985.032207313434,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 04:30:00,7015.845983679932,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 04:40:00,6993.810035908638,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 04:50:00,6997.517605290142,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 05:00:00,7011.960962271474,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 05:10:00,7007.239168591404,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 05:20:00,6999.969746280466,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 05:30:00,7005.03067730272,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 05:40:00,7009.182816015307,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 05:50:00,7002.648536014987,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 06:00:00,7013.971168972679,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 06:10:00,7008.060749590128,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 06:20:00,6997.1074085867285,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 06:30:00,7002.680716658864,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 06:40:00,7004.497415656915,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 06:50:00,7001.869205393402,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 07:00:00,7014.5542216926415,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 07:10:00,7037.469555742157,1,Entering controlled maintenance
-Satellite_A,2023-01-04 07:20:00,7009.6488519515715,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 07:30:00,7028.356986957438,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 07:40:00,7032.010689023425,1,Entering controlled maintenance
-Satellite_A,2023-01-04 07:50:00,7015.84398854543,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 08:00:00,7026.312901144722,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 08:10:00,7016.094152644272,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 08:20:00,7010.0383939466265,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 08:30:00,7013.358771537106,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 08:40:00,7022.470781617439,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 08:50:00,7028.869368411307,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 09:00:00,7011.998682666421,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 09:10:00,7027.927173097761,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 09:20:00,7029.801407417852,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 09:30:00,7020.10963484226,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 09:40:00,7031.9059596553325,1,Entering controlled maintenance
-Satellite_A,2023-01-04 09:50:00,7014.100751330087,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 10:00:00,7022.539044457525,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 10:10:00,7026.503129578946,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 10:20:00,7024.507283010295,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 10:30:00,7028.887770290652,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 10:40:00,7028.972335722234,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 10:50:00,7012.108688925308,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 11:00:00,7018.172278857762,0,Uncontrolled: Monitoring required
-Satellite_A,2023-01-04 11:10:00,7024.865562044065,0,Uncontrolled: Monitoring required
+Satellite_ID,Timestamp,Value,Category
+Satellite_A,2023-01-01 00:00:00,6995.459967266892,0
+Satellite_A,2023-01-01 00:10:00,6996.942409850722,0
+Satellite_A,2023-01-01 00:20:00,6996.789540974706,0
+Satellite_A,2023-01-01 00:30:00,7004.901526008577,0
+Satellite_A,2023-01-01 00:40:00,6996.3811172461,0
+Satellite_A,2023-01-01 00:50:00,7004.811710894471,0
+Satellite_A,2023-01-01 01:00:00,6999.369156907751,0
+Satellite_A,2023-01-01 01:10:00,7001.507382387553,0
+Satellite_A,2023-01-01 01:20:00,7001.65338076014,0
+Satellite_A,2023-01-01 01:30:00,7000.643810551365,0
+Satellite_A,2023-01-01 01:40:00,6998.780032139686,0
+Satellite_A,2023-01-01 01:50:00,7000.759946525523,0
+Satellite_A,2023-01-01 02:00:00,6998.353449559692,0
+Satellite_A,2023-01-01 02:10:00,7004.3174088884925,0
+Satellite_A,2023-01-01 02:20:00,7005.06138807363,0
+Satellite_A,2023-01-01 02:30:00,7006.356735933544,0
+Satellite_A,2023-01-01 02:40:00,7005.088914671438,0
+Satellite_A,2023-01-01 02:50:00,7007.545587272654,0
+Satellite_A,2023-01-01 03:00:00,7002.041728892862,0
+Satellite_A,2023-01-01 03:10:00,7005.668519566714,0
+Satellite_A,2023-01-01 03:20:00,7005.7828172299205,0
+Satellite_A,2023-01-01 03:30:00,7007.887116655231,0
+Satellite_A,2023-01-01 03:40:00,7005.185323817253,0
+Satellite_A,2023-01-01 03:50:00,7001.095360021921,0
+Satellite_A,2023-01-01 04:00:00,7004.27481321171,0
+Satellite_A,2023-01-01 04:10:00,7004.665300738341,0
+Satellite_A,2023-01-01 04:20:00,7001.780838249522,0
+Satellite_A,2023-01-01 04:30:00,7008.147375998331,0
+Satellite_A,2023-01-01 04:40:00,7005.749674767422,0
+Satellite_A,2023-01-01 04:50:00,7005.634280256182,0
+Satellite_A,2023-01-01 05:00:00,7008.803279219823,0
+Satellite_A,2023-01-01 05:10:00,7004.437810869902,0
+Satellite_A,2023-01-01 05:20:00,7003.6546881142285,0
+Satellite_A,2023-01-01 05:30:00,7009.0447946518125,0
+Satellite_A,2023-01-01 05:40:00,7007.622910959356,0
+Satellite_A,2023-01-01 05:50:00,6993.814510965303,0
+Satellite_A,2023-01-01 06:00:00,7011.687305430511,0
+Satellite_A,2023-01-01 06:10:00,7000.430839121688,0
+Satellite_A,2023-01-01 06:20:00,7007.209991604398,0
+Satellite_A,2023-01-01 06:30:00,7007.5354318700265,0
+Satellite_A,2023-01-01 06:40:00,7007.1114577098815,0
+Satellite_A,2023-01-01 06:50:00,7012.012836920616,0
+Satellite_A,2023-01-01 07:00:00,7005.260602549172,0
+Satellite_A,2023-01-01 07:10:00,7005.972198207494,0
+Satellite_A,2023-01-01 07:20:00,7011.841077279569,0
+Satellite_A,2023-01-01 07:30:00,7010.476575715031,0
+Satellite_A,2023-01-01 07:40:00,7013.267394239363,0
+Satellite_A,2023-01-01 07:50:00,7005.635568000994,0
+Satellite_A,2023-01-01 08:00:00,7001.377997749965,0
+Satellite_A,2023-01-01 08:10:00,7010.731452898961,0
+Satellite_A,2023-01-01 08:20:00,7013.9613855700245,0
+Satellite_A,2023-01-01 08:30:00,7009.631556746106,0
+Satellite_A,2023-01-01 08:40:00,7012.795591505691,0
+Satellite_A,2023-01-01 08:50:00,7012.658888077245,0
+Satellite_A,2023-01-01 09:00:00,7015.47448623657,0
+Satellite_A,2023-01-01 09:10:00,7008.1702330494945,0
+Satellite_A,2023-01-01 09:20:00,7011.701644996956,0
+Satellite_A,2023-01-01 09:30:00,7005.780929270481,0
+Satellite_A,2023-01-01 09:40:00,7009.113542019884,0
+Satellite_A,2023-01-01 09:50:00,7013.4766744386925,0
+Satellite_A,2023-01-01 10:00:00,7017.4278945240585,0
+Satellite_A,2023-01-01 10:10:00,7005.269737515681,0
+Satellite_A,2023-01-01 10:20:00,7010.391366249059,0
+Satellite_A,2023-01-01 10:30:00,7010.319141372569,0
+Satellite_A,2023-01-01 10:40:00,7014.3914091794595,0
+Satellite_A,2023-01-01 10:50:00,7013.305199435358,0
+Satellite_A,2023-01-01 11:00:00,7011.915739913204,0
+Satellite_A,2023-01-01 11:10:00,7017.259880825437,0
+Satellite_A,2023-01-01 11:20:00,7010.563734867244,0
+Satellite_A,2023-01-01 11:30:00,7015.128398409955,0
+Satellite_A,2023-01-01 11:40:00,7014.902682273373,0
+Satellite_A,2023-01-01 11:50:00,7009.802800545996,0
+Satellite_A,2023-01-01 12:00:00,7018.808576647299,0
+Satellite_A,2023-01-01 12:10:00,7019.214679734488,0
+Satellite_A,2023-01-01 12:20:00,7014.5927451923,0
+Satellite_A,2023-01-01 12:30:00,7017.973155397359,0
+Satellite_A,2023-01-01 12:40:00,7016.787202886433,0
+Satellite_A,2023-01-01 12:50:00,7012.305074041428,0
+Satellite_A,2023-01-01 13:00:00,7018.4828258170455,0
+Satellite_A,2023-01-01 13:10:00,7013.569930149765,0
+Satellite_A,2023-01-01 13:20:00,7020.218625758921,0
+Satellite_A,2023-01-01 13:30:00,7017.7259193217915,0
+Satellite_A,2023-01-01 13:40:00,7021.450748573176,0
+Satellite_A,2023-01-01 13:50:00,7018.759912661017,0
+Satellite_A,2023-01-01 14:00:00,7017.221390019946,0
+Satellite_A,2023-01-01 14:10:00,7014.936637897826,0
+Satellite_A,2023-01-01 14:20:00,7020.66086042526,0
+Satellite_A,2023-01-01 14:30:00,7020.492186658466,0
+Satellite_A,2023-01-01 14:40:00,7017.7809629643425,0
+Satellite_A,2023-01-01 14:50:00,7012.247269491876,0
+Satellite_A,2023-01-01 15:00:00,7014.626631363527,0
+Satellite_A,2023-01-01 15:10:00,7015.619839706881,0
+Satellite_A,2023-01-01 15:20:00,7016.826695484943,0
+Satellite_A,2023-01-01 15:30:00,7021.452844445231,0
+Satellite_A,2023-01-01 15:40:00,7021.428078984295,0
+Satellite_A,2023-01-01 15:50:00,7016.836959465481,0
+Satellite_A,2023-01-01 16:00:00,7014.75785971573,0
+Satellite_A,2023-01-01 16:10:00,7017.165303791878,0
+Satellite_A,2023-01-01 16:20:00,7021.630897432857,0
+Satellite_A,2023-01-01 16:30:00,7016.381881304731,0
+Satellite_A,2023-01-01 16:40:00,7018.944460596364,0
+Satellite_A,2023-01-01 16:50:00,7018.746084120658,0
+Satellite_A,2023-01-01 17:00:00,7019.948883761131,0
+Satellite_A,2023-01-01 17:10:00,7019.6188591556,0
+Satellite_A,2023-01-01 17:20:00,7021.285182142103,0
+Satellite_A,2023-01-01 17:30:00,7025.82461598437,0
+Satellite_A,2023-01-01 17:40:00,7023.53019235871,0
+Satellite_A,2023-01-01 17:50:00,7021.13310780625,0
+Satellite_A,2023-01-01 18:00:00,7022.348918889741,0
+Satellite_A,2023-01-01 18:10:00,7020.876604515596,0
+Satellite_A,2023-01-01 18:20:00,7017.460025670973,0
+Satellite_A,2023-01-01 18:30:00,7022.451903085499,0
+Satellite_A,2023-01-01 18:40:00,7025.135586846888,0
+Satellite_A,2023-01-01 18:50:00,7026.388082683368,0
+Satellite_A,2023-01-01 19:00:00,7020.534742487048,0
+Satellite_A,2023-01-01 19:10:00,7020.791780073184,0
+Satellite_A,2023-01-01 19:20:00,7020.9939802387535,0
+Satellite_A,2023-01-01 19:30:00,7021.5708612315875,0
+Satellite_A,2023-01-01 19:40:00,7019.504504682975,0
+Satellite_A,2023-01-01 19:50:00,7021.655883307973,0
+Satellite_A,2023-01-01 20:00:00,7022.777231345245,0
+Satellite_A,2023-01-01 20:10:00,7023.937321411385,0
+Satellite_A,2023-01-01 20:20:00,7024.810258939442,0
+Satellite_A,2023-01-01 20:30:00,7029.878724954727,0
+Satellite_A,2023-01-01 20:40:00,7029.310174525921,0
+Satellite_A,2023-01-01 20:50:00,7024.010265167037,0
+Satellite_A,2023-01-01 21:00:00,7028.9474297773795,0
+Satellite_A,2023-01-01 21:10:00,7023.616918500138,0
+Satellite_A,2023-01-01 21:20:00,7029.911291981707,0
+Satellite_A,2023-01-01 21:30:00,7024.9931295951155,0
+Satellite_A,2023-01-01 21:40:00,7031.019796949248,1
+Satellite_A,2023-01-01 21:50:00,7026.595096777064,0
+Satellite_A,2023-01-01 22:00:00,7021.400582292648,0
+Satellite_A,2023-01-01 22:10:00,7022.109900971953,0
+Satellite_A,2023-01-01 22:20:00,7024.4447938658,0
+Satellite_A,2023-01-01 22:30:00,7028.840160117923,0
+Satellite_A,2023-01-01 22:40:00,7028.591544223707,0
+Satellite_A,2023-01-01 22:50:00,7029.7750701256255,0
+Satellite_A,2023-01-01 23:00:00,7029.852510175711,0
+Satellite_A,2023-01-01 23:10:00,7026.363369282233,0
+Satellite_A,2023-01-01 23:20:00,7028.499701938242,0
+Satellite_A,2023-01-01 23:30:00,7024.160335720992,0
+Satellite_A,2023-01-01 23:40:00,7029.434144726385,0
+Satellite_A,2023-01-01 23:50:00,7028.577675944285,0
+Satellite_A,2023-01-02 00:00:00,7031.948682154609,1
+Satellite_A,2023-01-02 00:10:00,7023.448039167317,0
+Satellite_A,2023-01-02 00:20:00,7027.398329837728,0
+Satellite_A,2023-01-02 00:30:00,7026.961321351442,0
+Satellite_A,2023-01-02 00:40:00,7032.769708199799,1
+Satellite_A,2023-01-02 00:50:00,7027.17364745327,0
+Satellite_A,2023-01-02 01:00:00,7033.169674766973,1
+Satellite_A,2023-01-02 01:10:00,7031.218215738538,1
+Satellite_A,2023-01-02 01:20:00,7038.311138833689,1
+Satellite_A,2023-01-02 01:30:00,7026.385155258458,0
+Satellite_A,2023-01-02 01:40:00,7034.054295777007,1
+Satellite_A,2023-01-02 01:50:00,7032.812670823005,1
+Satellite_A,2023-01-02 02:00:00,7027.814333104332,0
+Satellite_A,2023-01-02 02:10:00,7029.859416991649,0
+Satellite_A,2023-01-02 02:20:00,7027.486394049747,0
+Satellite_A,2023-01-02 02:30:00,7037.672114992705,1
+Satellite_A,2023-01-02 02:40:00,7033.520654228882,1
+Satellite_A,2023-01-02 02:50:00,7031.843732752944,1
+Satellite_A,2023-01-02 03:00:00,7031.95630149578,1
+Satellite_A,2023-01-02 03:10:00,7034.029360320052,1
+Satellite_A,2023-01-02 03:20:00,7029.7401658604385,0
+Satellite_A,2023-01-02 03:30:00,7034.026461427067,1
+Satellite_A,2023-01-02 03:40:00,7032.4561632659725,1
+Satellite_A,2023-01-02 03:50:00,7035.366652233542,1
+Satellite_A,2023-01-02 04:00:00,7032.782829518702,1
+Satellite_A,2023-01-02 04:10:00,7032.219338168589,1
+Satellite_A,2023-01-02 04:20:00,7034.819519029028,1
+Satellite_A,2023-01-02 04:30:00,7031.575026629753,1
+Satellite_A,2023-01-02 04:40:00,7034.454967970737,1
+Satellite_A,2023-01-02 04:50:00,7037.700325379627,1
+Satellite_A,2023-01-02 05:00:00,7034.415734394704,1
+Satellite_A,2023-01-02 05:10:00,7039.726031413914,1
+Satellite_A,2023-01-02 05:20:00,7036.505529381455,1
+Satellite_A,2023-01-02 05:30:00,7031.8189285320595,1
+Satellite_A,2023-01-02 05:40:00,7035.540206563778,1
+Satellite_A,2023-01-02 05:50:00,7037.456176409248,1
+Satellite_A,2023-01-02 06:00:00,7041.936285505647,1
+Satellite_A,2023-01-02 06:10:00,7038.366952179827,1
+Satellite_A,2023-01-02 06:20:00,7038.308785216114,1
+Satellite_A,2023-01-02 06:30:00,7038.032206668809,1
+Satellite_A,2023-01-02 06:40:00,7034.213232827987,1
+Satellite_A,2023-01-02 06:50:00,7039.2647254080475,1
+Satellite_A,2023-01-02 07:00:00,7037.444625542125,1
+Satellite_A,2023-01-02 07:10:00,7038.2944129516345,1
+Satellite_A,2023-01-02 07:20:00,7037.479512483189,1
+Satellite_A,2023-01-02 07:30:00,7038.5678205551385,1
+Satellite_A,2023-01-02 07:40:00,7039.980931747335,1
+Satellite_A,2023-01-02 07:50:00,7036.449581254855,1
+Satellite_A,2023-01-02 08:00:00,7036.810647905304,1
+Satellite_A,2023-01-02 08:10:00,7036.616942114422,1
+Satellite_A,2023-01-02 08:20:00,7041.213958912764,1
+Satellite_A,2023-01-02 08:30:00,7034.655408702271,1
+Satellite_A,2023-01-02 08:40:00,7038.896349187483,1
+Satellite_A,2023-01-02 08:50:00,7030.624634273547,1
+Satellite_A,2023-01-02 09:00:00,7041.985479427137,1
+Satellite_A,2023-01-02 09:10:00,7040.272124999256,1
+Satellite_A,2023-01-02 09:20:00,7044.314594460224,1
+Satellite_A,2023-01-02 09:30:00,7040.808583058543,1
+Satellite_A,2023-01-02 09:40:00,7041.817068852926,1
+Satellite_A,2023-01-02 09:50:00,7035.792629342149,1
+Satellite_A,2023-01-02 10:00:00,7037.628829349566,1
+Satellite_A,2023-01-02 10:10:00,7040.151181087638,1
+Satellite_A,2023-01-02 10:20:00,7039.284928616517,1
+Satellite_A,2023-01-02 10:30:00,7040.770619784592,1
+Satellite_A,2023-01-02 10:40:00,7039.0968578022275,1
+Satellite_A,2023-01-02 10:50:00,7038.271972510204,1
+Satellite_A,2023-01-02 11:00:00,7042.817217428932,1
+Satellite_A,2023-01-02 11:10:00,7040.91459806666,1
+Satellite_A,2023-01-02 11:20:00,7044.58616758671,1
+Satellite_A,2023-01-02 11:30:00,7044.371740306827,1
+Satellite_A,2023-01-02 11:40:00,7046.851597888081,1
+Satellite_A,2023-01-02 11:50:00,7038.241829431984,1
+Satellite_A,2023-01-02 12:00:00,7038.038011151552,1
+Satellite_A,2023-01-02 12:10:00,7041.1230831636385,1
+Satellite_A,2023-01-02 12:20:00,7042.517817462041,1
+Satellite_A,2023-01-02 12:30:00,7047.414561321466,1
+Satellite_A,2023-01-02 12:40:00,7051.22910436171,1
+Satellite_A,2023-01-02 12:50:00,7044.660409098705,1
+Satellite_A,2023-01-02 13:00:00,7047.202319785207,1
+Satellite_A,2023-01-02 13:10:00,7046.920842461044,1
+Satellite_A,2023-01-02 13:20:00,7038.276361613886,1
+Satellite_A,2023-01-02 13:30:00,7042.014397304997,1
+Satellite_A,2023-01-02 13:40:00,7047.773928779051,1
+Satellite_A,2023-01-02 13:50:00,7043.261073251046,1
+Satellite_A,2023-01-02 14:00:00,7045.947881752523,1
+Satellite_A,2023-01-02 14:10:00,7048.514936243748,1
+Satellite_A,2023-01-02 14:20:00,7049.589384632765,1
+Satellite_A,2023-01-02 14:30:00,7044.3495800445135,1
+Satellite_A,2023-01-02 14:40:00,7051.451872151795,1
+Satellite_A,2023-01-02 14:50:00,7046.894064008577,1
+Satellite_A,2023-01-02 15:00:00,7045.049458803995,1
+Satellite_A,2023-01-02 15:10:00,7045.8606261023415,1
+Satellite_A,2023-01-02 15:20:00,7046.680333300191,1
+Satellite_A,2023-01-02 15:30:00,7046.899814322317,1
+Satellite_A,2023-01-02 15:40:00,7047.522115214961,1
+Satellite_A,2023-01-02 15:50:00,7046.475988991427,1
+Satellite_A,2023-01-02 16:00:00,7051.698340238091,1
+Satellite_A,2023-01-02 16:10:00,7048.884714054164,1
+Satellite_A,2023-01-02 16:20:00,7049.984246569398,1
+Satellite_A,2023-01-02 16:30:00,7047.685992002116,1
+Satellite_A,2023-01-02 16:40:00,7047.739156965166,1
+Satellite_A,2023-01-02 16:50:00,7052.462492234163,1
+Satellite_A,2023-01-02 17:00:00,7049.917420581563,1
+Satellite_A,2023-01-02 17:10:00,7047.730672471067,1
+Satellite_A,2023-01-02 17:20:00,7049.023355769248,1
+Satellite_A,2023-01-02 17:30:00,7051.481433542444,1
+Satellite_A,2023-01-02 17:40:00,7048.492636495769,1
+Satellite_A,2023-01-02 17:50:00,7051.539616278015,1
+Satellite_A,2023-01-02 18:00:00,7047.147458912289,1
+Satellite_A,2023-01-02 18:10:00,7052.146906450411,1
+Satellite_A,2023-01-02 18:20:00,7052.284507222636,1
+Satellite_A,2023-01-02 18:30:00,7050.325611189738,1
+Satellite_A,2023-01-02 18:40:00,7050.8797283186195,1
+Satellite_A,2023-01-02 18:50:00,7057.433665395639,1
+Satellite_A,2023-01-02 19:00:00,7048.289900850137,1
+Satellite_A,2023-01-02 19:10:00,7056.313289010311,1
+Satellite_A,2023-01-02 19:20:00,7047.191178305686,1
+Satellite_A,2023-01-02 19:30:00,7053.925352354834,1
+Satellite_A,2023-01-02 19:40:00,7048.641468428527,1
+Satellite_A,2023-01-02 19:50:00,7054.3883463724,1
+Satellite_A,2023-01-02 20:00:00,7058.265438015712,1
+Satellite_A,2023-01-02 20:10:00,7046.607202334805,1
+Satellite_A,2023-01-02 20:20:00,7056.729065490838,1
+Satellite_A,2023-01-02 20:30:00,7050.864642225102,1
+Satellite_A,2023-01-02 20:40:00,7050.578935496217,1
+Satellite_A,2023-01-02 20:50:00,7055.010683668123,1
+Satellite_A,2023-01-02 21:00:00,7054.678524015271,1
+Satellite_A,2023-01-02 21:10:00,7052.036683705722,1
+Satellite_A,2023-01-02 21:20:00,7058.330366953518,1
+Satellite_A,2023-01-02 21:30:00,7051.350934230959,1
+Satellite_A,2023-01-02 21:40:00,7051.7145993070435,1
+Satellite_A,2023-01-02 21:50:00,7056.4721204735815,1
+Satellite_A,2023-01-02 22:00:00,7049.5064959531965,1
+Satellite_A,2023-01-02 22:10:00,7053.383439915168,1
+Satellite_A,2023-01-02 22:20:00,7055.390730106761,1
+Satellite_A,2023-01-02 22:30:00,7060.163572520368,2
+Satellite_A,2023-01-02 22:40:00,7057.761793333995,1
+Satellite_A,2023-01-02 22:50:00,7062.142636953443,2
+Satellite_A,2023-01-02 23:00:00,7063.491107156865,2
+Satellite_A,2023-01-02 23:10:00,7056.694116095704,1
+Satellite_A,2023-01-02 23:20:00,7055.980676883502,1
+Satellite_A,2023-01-02 23:30:00,7058.531356987158,1
+Satellite_A,2023-01-02 23:40:00,7058.315451947018,1
+Satellite_A,2023-01-02 23:50:00,7058.216079020228,1
+Satellite_A,2023-01-03 00:00:00,7060.6916685691995,2
+Satellite_A,2023-01-03 00:10:00,7056.136712325435,1
+Satellite_A,2023-01-03 00:20:00,7056.762422063143,1
+Satellite_A,2023-01-03 00:30:00,7060.265098550135,2
+Satellite_A,2023-01-03 00:40:00,7063.303745899965,2
+Satellite_A,2023-01-03 00:50:00,7058.235123273175,1
+Satellite_A,2023-01-03 01:00:00,7052.578910847987,1
+Satellite_A,2023-01-03 01:10:00,7061.997310515018,2
+Satellite_A,2023-01-03 01:20:00,7054.65391317795,1
+Satellite_A,2023-01-03 01:30:00,7060.9959649149405,2
+Satellite_A,2023-01-03 01:40:00,7064.435068355593,2
+Satellite_A,2023-01-03 01:50:00,7054.011179593049,1
+Satellite_A,2023-01-03 02:00:00,7058.483626026146,1
+Satellite_A,2023-01-03 02:10:00,7062.585934725108,2
+Satellite_A,2023-01-03 02:20:00,7058.8097095382345,1
+Satellite_A,2023-01-03 02:30:00,7059.415685928085,1
+Satellite_A,2023-01-03 02:40:00,7059.16664017637,1
+Satellite_A,2023-01-03 02:50:00,7062.991912462544,2
+Satellite_A,2023-01-03 03:00:00,7058.848356809792,1
+Satellite_A,2023-01-03 03:10:00,7061.250129760858,2
+Satellite_A,2023-01-03 03:20:00,7058.562049199909,1
+Satellite_A,2023-01-03 03:30:00,7062.3950126759,2
+Satellite_A,2023-01-03 03:40:00,7060.83887461111,2
+Satellite_A,2023-01-03 03:50:00,7061.329352548203,2
+Satellite_A,2023-01-03 04:00:00,7064.181856437012,2
+Satellite_A,2023-01-03 04:10:00,7061.559668980164,2
+Satellite_A,2023-01-03 04:20:00,7060.62095917755,2
+Satellite_A,2023-01-03 04:30:00,7065.371003544732,2
+Satellite_A,2023-01-03 04:40:00,7062.504821364793,2
+Satellite_A,2023-01-03 04:50:00,7063.162336486498,2
+Satellite_A,2023-01-03 05:00:00,7063.305913098325,2
+Satellite_A,2023-01-03 05:10:00,7070.613331937243,2
+Satellite_A,2023-01-03 05:20:00,7067.412919251439,2
+Satellite_A,2023-01-03 05:30:00,7061.25394755256,2
+Satellite_A,2023-01-03 05:40:00,7060.664057120903,2
+Satellite_A,2023-01-03 05:50:00,7065.223085012785,2
+Satellite_A,2023-01-03 06:00:00,7065.036426173211,2
+Satellite_A,2023-01-03 06:10:00,7059.303798415229,1
+Satellite_A,2023-01-03 06:20:00,7066.440857208329,2
+Satellite_A,2023-01-03 06:30:00,7067.851691552545,2
+Satellite_A,2023-01-03 06:40:00,7070.377994543988,2
+Satellite_A,2023-01-03 06:50:00,7067.174810206314,2
+Satellite_A,2023-01-03 07:00:00,7070.806663444063,2
+Satellite_A,2023-01-03 07:10:00,7062.783411295627,2
+Satellite_A,2023-01-03 07:20:00,7066.639145247636,2
+Satellite_A,2023-01-03 07:30:00,7067.529011390492,2
+Satellite_A,2023-01-03 07:40:00,7065.011615634212,2
+Satellite_A,2023-01-03 07:50:00,7071.664768749808,2
+Satellite_A,2023-01-03 08:00:00,7065.31367175448,2
+Satellite_A,2023-01-03 08:10:00,7068.01004358555,2
+Satellite_A,2023-01-03 08:20:00,7067.487708611882,2
+Satellite_A,2023-01-03 08:30:00,7069.62622924209,2
+Satellite_A,2023-01-03 08:40:00,7069.5411422363495,2
+Satellite_A,2023-01-03 08:50:00,7075.211998961098,2
+Satellite_A,2023-01-03 09:00:00,7068.137139874277,2
+Satellite_A,2023-01-03 09:10:00,7067.029402601836,2
+Satellite_A,2023-01-03 09:20:00,7072.1070090778685,2
+Satellite_A,2023-01-03 09:30:00,7074.319731444149,2
+Satellite_A,2023-01-03 09:40:00,7070.659001743888,2
+Satellite_A,2023-01-03 09:50:00,7070.474174829592,2
+Satellite_A,2023-01-03 10:00:00,7065.333414291263,2
+Satellite_A,2023-01-03 10:10:00,7066.411345430665,2
+Satellite_A,2023-01-03 10:20:00,7078.379953999767,2
+Satellite_A,2023-01-03 10:30:00,7070.444836953527,2
+Satellite_A,2023-01-03 10:40:00,7071.238018092746,2
+Satellite_A,2023-01-03 10:50:00,7068.233403299527,2
+Satellite_A,2023-01-03 11:00:00,7068.028573087354,2
+Satellite_A,2023-01-03 11:10:00,7072.196196724561,2
+Satellite_A,2023-01-03 11:20:00,7069.902142193211,2
+Satellite_A,2023-01-03 11:30:00,7072.4525803602455,2
+Satellite_A,2023-01-03 11:40:00,7073.5582538629915,2
+Satellite_A,2023-01-03 11:50:00,7072.191353010187,2
+Satellite_A,2023-01-03 12:00:00,7073.613950173785,2
+Satellite_A,2023-01-03 12:10:00,7075.225104630207,2
+Satellite_A,2023-01-03 12:20:00,7073.08011801325,2
+Satellite_A,2023-01-03 12:30:00,7079.108363509336,2
+Satellite_A,2023-01-03 12:40:00,7076.5550871721925,2
+Satellite_A,2023-01-03 12:50:00,7068.3996769740415,2
+Satellite_A,2023-01-03 13:00:00,7077.207580936379,2
+Satellite_A,2023-01-03 13:10:00,7075.273784108371,2
+Satellite_A,2023-01-03 13:20:00,7079.354090800205,2
+Satellite_A,2023-01-03 13:30:00,7074.830542398452,2
+Satellite_A,2023-01-03 13:40:00,7077.330785634224,2
+Satellite_A,2023-01-03 13:50:00,7074.747470500125,2
+Satellite_A,2023-01-03 14:00:00,7074.188532227706,2
+Satellite_A,2023-01-03 14:10:00,7077.281335575412,2
+Satellite_A,2023-01-03 14:20:00,7077.320975682444,2
+Satellite_A,2023-01-03 14:30:00,7073.614321916129,2
+Satellite_A,2023-01-03 14:40:00,7077.0345187874755,2
+Satellite_A,2023-01-03 14:50:00,7076.700470764775,2
+Satellite_A,2023-01-03 15:00:00,7075.580932244636,2
+Satellite_A,2023-01-03 15:10:00,7069.0197772891715,2
+Satellite_A,2023-01-03 15:20:00,7074.389295960054,2
+Satellite_A,2023-01-03 15:30:00,7079.493289288724,2
+Satellite_A,2023-01-03 15:40:00,7075.831018780643,2
+Satellite_A,2023-01-03 15:50:00,7078.357277012452,2
+Satellite_A,2023-01-03 16:00:00,7078.070790474289,2
+Satellite_A,2023-01-03 16:10:00,7076.152110901703,2
+Satellite_A,2023-01-03 16:20:00,7077.8020072624695,2
+Satellite_A,2023-01-03 16:30:00,7073.002903835671,2
+Satellite_A,2023-01-03 16:40:00,7077.560508315916,2
+Satellite_A,2023-01-03 16:50:00,7077.902633434183,2
+Satellite_A,2023-01-03 17:00:00,7079.625748220271,2
+Satellite_A,2023-01-03 17:10:00,7077.850478602506,2
+Satellite_A,2023-01-03 17:20:00,7074.773777701816,2
+Satellite_A,2023-01-03 17:30:00,7075.173617380545,2
+Satellite_A,2023-01-03 17:40:00,7077.218592862362,2
+Satellite_A,2023-01-03 17:50:00,7079.489654961707,2
+Satellite_A,2023-01-03 18:00:00,7076.693736256898,2
+Satellite_A,2023-01-03 18:10:00,7078.766241741901,2
+Satellite_A,2023-01-03 18:20:00,7079.594889261436,2
+Satellite_A,2023-01-03 18:30:00,7079.972160822382,2
+Satellite_A,2023-01-03 18:40:00,7077.270778217941,2
+Satellite_A,2023-01-03 18:50:00,7083.062552961526,3
+Satellite_A,2023-01-03 19:00:00,7078.909511686254,2
+Satellite_A,2023-01-03 19:10:00,7081.372397348424,3
+Satellite_A,2023-01-03 19:20:00,7086.98152607012,3
+Satellite_A,2023-01-03 19:30:00,7082.487664499816,3
+Satellite_A,2023-01-03 19:40:00,7083.626981422168,3
+Satellite_A,2023-01-03 19:50:00,7079.063008992364,2
+Satellite_A,2023-01-03 20:00:00,7080.911993428446,3
+Satellite_A,2023-01-03 20:10:00,7076.985789877445,2
+Satellite_A,2023-01-03 20:20:00,7077.722797028938,2
+Satellite_A,2023-01-03 20:30:00,7084.078732931446,3
+Satellite_A,2023-01-03 20:40:00,7084.898559534202,3
+Satellite_A,2023-01-03 20:50:00,7086.861948546063,3
+Satellite_A,2023-01-03 21:00:00,7086.324997835377,3
+Satellite_A,2023-01-03 21:10:00,7080.116012157848,3
+Satellite_A,2023-01-03 21:20:00,7079.767188947233,2
+Satellite_A,2023-01-03 21:30:00,7080.613016096635,3
+Satellite_A,2023-01-03 21:40:00,7080.515664892948,3
+Satellite_A,2023-01-03 21:50:00,7082.1340018735345,3
+Satellite_A,2023-01-03 22:00:00,7084.311142373836,3
+Satellite_A,2023-01-03 22:10:00,7085.63561289482,3
+Satellite_A,2023-01-03 22:20:00,7089.44650964387,3
+Satellite_A,2023-01-03 22:30:00,7079.495474803981,2
+Satellite_A,2023-01-03 22:40:00,7082.385725939091,3
+Satellite_A,2023-01-03 22:50:00,7090.515315455662,3
+Satellite_A,2023-01-03 23:00:00,7081.011155358457,3
+Satellite_A,2023-01-03 23:10:00,7091.118088648348,3
+Satellite_A,2023-01-03 23:20:00,7091.220605548899,3
+Satellite_A,2023-01-03 23:30:00,7083.640288037538,3
+Satellite_A,2023-01-03 23:40:00,7087.589960072197,3
+Satellite_A,2023-01-03 23:50:00,7086.219323487102,3
+Satellite_A,2023-01-04 00:00:00,7087.610092163753,3
+Satellite_A,2023-01-04 00:10:00,7085.099785579463,3
+Satellite_A,2023-01-04 00:20:00,7087.942662179691,3
+Satellite_A,2023-01-04 00:30:00,7083.260316897604,3
+Satellite_A,2023-01-04 00:40:00,7086.275584389369,3
+Satellite_A,2023-01-04 00:50:00,7087.168534098471,3
+Satellite_A,2023-01-04 01:00:00,7082.630905276951,3
+Satellite_A,2023-01-04 01:10:00,7082.404219561118,3
+Satellite_A,2023-01-04 01:20:00,7092.569838165421,3
+Satellite_A,2023-01-04 01:30:00,7090.404360871044,3
+Satellite_A,2023-01-04 01:40:00,7097.260045522247,3
+Satellite_A,2023-01-04 01:50:00,7087.625865371849,3
+Satellite_A,2023-01-04 02:00:00,7091.312340973752,3
+Satellite_A,2023-01-04 02:10:00,7087.373757229597,3
+Satellite_A,2023-01-04 02:20:00,7084.4125910223775,3
+Satellite_A,2023-01-04 02:30:00,7087.662764520955,3
+Satellite_A,2023-01-04 02:40:00,7092.041703761832,3
+Satellite_A,2023-01-04 02:50:00,7093.532248388898,3
+Satellite_A,2023-01-04 03:00:00,7086.3188387000455,3
+Satellite_A,2023-01-04 03:10:00,7086.7539961197635,3
+Satellite_A,2023-01-04 03:20:00,7089.066184411731,3
+Satellite_A,2023-01-04 03:30:00,7092.711098323865,3
+Satellite_A,2023-01-04 03:40:00,7088.463047275679,3
+Satellite_A,2023-01-04 03:50:00,7092.254889449403,3
+Satellite_A,2023-01-04 04:00:00,7092.977034261372,3
+Satellite_A,2023-01-04 04:10:00,7094.417146346746,3
+Satellite_A,2023-01-04 04:20:00,7092.834809122533,3
+Satellite_A,2023-01-04 04:30:00,7086.557815802759,3
+Satellite_A,2023-01-04 04:40:00,7093.835521711003,3
+Satellite_A,2023-01-04 04:50:00,7095.60408112853,3
+Satellite_A,2023-01-04 05:00:00,7092.315417915243,3
+Satellite_A,2023-01-04 05:10:00,7089.012203155418,3
+Satellite_A,2023-01-04 05:20:00,7092.331310304985,3
+Satellite_A,2023-01-04 05:30:00,7092.577348554863,3
+Satellite_A,2023-01-04 05:40:00,7091.042627264191,3
+Satellite_A,2023-01-04 05:50:00,7093.200759604873,3
+Satellite_A,2023-01-04 06:00:00,7092.073797156928,3
+Satellite_A,2023-01-04 06:10:00,7096.791418620459,3
+Satellite_A,2023-01-04 06:20:00,7096.58677895901,3
+Satellite_A,2023-01-04 06:30:00,7097.996691995852,3
+Satellite_A,2023-01-04 06:40:00,7092.506804350973,3
+Satellite_A,2023-01-04 06:50:00,7094.1512685645275,3
+Satellite_A,2023-01-04 07:00:00,7092.4409176626905,3
+Satellite_A,2023-01-04 07:10:00,7094.788573894895,3
+Satellite_A,2023-01-04 07:20:00,7094.209295795305,3
+Satellite_A,2023-01-04 07:30:00,7095.449081509565,3
+Satellite_A,2023-01-04 07:40:00,7094.408158061466,3
+Satellite_A,2023-01-04 07:50:00,7094.89853885741,3
+Satellite_A,2023-01-04 08:00:00,7092.525612252978,3
+Satellite_A,2023-01-04 08:10:00,7101.86770392779,3
+Satellite_A,2023-01-04 08:20:00,7094.434592680837,3
+Satellite_A,2023-01-04 08:30:00,7098.796399961477,3
+Satellite_A,2023-01-04 08:40:00,7098.069968412941,3
+Satellite_A,2023-01-04 08:50:00,7097.997102524839,3
+Satellite_A,2023-01-04 09:00:00,7095.548254013244,3
+Satellite_A,2023-01-04 09:10:00,7094.87439004833,3
+Satellite_A,2023-01-04 09:20:00,7093.529155338393,3
+Satellite_A,2023-01-04 09:30:00,7096.549531540036,3
+Satellite_A,2023-01-04 09:40:00,7100.087531950879,3
+Satellite_A,2023-01-04 09:50:00,7097.646019858249,3
+Satellite_A,2023-01-04 10:00:00,7100.900192265264,3
+Satellite_A,2023-01-04 10:10:00,7106.991224191702,3
+Satellite_A,2023-01-04 10:20:00,7102.173355899928,3
+Satellite_A,2023-01-04 10:30:00,7099.5789627737195,3
+Satellite_A,2023-01-04 10:40:00,7101.2446685608875,3
+Satellite_A,2023-01-04 10:50:00,7093.839651781759,3
+Satellite_A,2023-01-04 11:00:00,7098.450712501197,3
+Satellite_A,2023-01-04 11:10:00,7101.4961921376325,3
