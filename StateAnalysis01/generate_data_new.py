@@ -21,7 +21,7 @@ def j2_effect(t, semi_major_axis, inclination=0.1, j2=1.082626e-3):
     return omega_dot * np.sin(2 * np.pi * t / period)  # 产生周期性扰动
 
 # Helper function to generate a dataset
-def generate_satellite_data(satellite_id, start_time, num_records, freq='10T'):
+def generate_satellite_data(start_time, num_records, freq='10T'):
     """
     Generates a dataset for a single satellite with realistic control categories.
 
@@ -68,7 +68,6 @@ def generate_satellite_data(satellite_id, start_time, num_records, freq='10T'):
 
     # Create DataFrame
     data = pd.DataFrame({
-        'Satellite_ID': satellite_id,
         'Timestamp': timestamps,
         'Value': values,
         'Category': categories
@@ -76,11 +75,41 @@ def generate_satellite_data(satellite_id, start_time, num_records, freq='10T'):
 
     return data
 
-# Directories for saving files
+def generate_satellite_prediction_data(start_time, num_records, freq='10T'):
+    # Generate a time range
+    timestamps = pd.date_range(start=start_time, periods=num_records, freq=freq)
+    time_seconds = np.arange(num_records) * pd.to_timedelta(freq).total_seconds()  # Time in seconds for simulation
+
+    # Initial semi-major axis (in km)
+    semi_major_axis = 7000  # Initial semi-major axis in km
+    drift_rate = 0.02  # Drift rate in km/day
+
+    # Add random perturbations to simulate real-world deviations (e.g., from solar radiation pressure and J2 effect)
+    values = np.linspace(semi_major_axis, semi_major_axis + 100, num_records)  # Drift from 7000 to 7100 km
+
+    # Adding solar radiation pressure effect
+    solar_effects = np.array([solar_radiation_pressure_effect(t) for t in time_seconds])
+
+    # Adding J2 effect (Earth's gravity field influence)
+    j2_effects = np.array([j2_effect(t, semi_major_axis) for t in time_seconds])
+
+    # Combine the effects with random noise
+    values += drift_rate * time_seconds / 86400 + solar_effects + j2_effects + np.random.normal(0, 3, num_records)
+
+    # Create DataFrame
+    data = pd.DataFrame({
+        'Timestamp': timestamps,
+        'Value': values
+    })
+
+    return data
+
 train_dir = "./train_data"
 eval_dir = "./evaluation_data"
+prediction_dir = "./prediction_data"
 os.makedirs(train_dir, exist_ok=True)
 os.makedirs(eval_dir, exist_ok=True)
+os.makedirs(prediction_dir, exist_ok=True)
 
 # Satellites list
 satellites = ['Satellite_A', 'Satellite_B', 'Satellite_C', 'Satellite_D']
@@ -88,9 +117,8 @@ satellites = ['Satellite_A', 'Satellite_B', 'Satellite_C', 'Satellite_D']
 # Generate and save training datasets
 for satellite in satellites:
     train_data = generate_satellite_data(
-        satellite_id=satellite,
         start_time="2023-01-01 00:00:00",
-        num_records=500,  # Number of records per satellite
+        num_records=5000,  # Number of records per satellite
         freq='10T'
     )
 
@@ -102,8 +130,7 @@ for satellite in satellites:
 # Generate and save evaluation datasets
 for satellite in satellites:
     eval_data = generate_satellite_data(
-        satellite_id=satellite,
-        start_time="2023-02-01 00:00:00",
+        start_time="2024-02-01 00:00:00",
         num_records=200,  # Number of records per satellite
         freq='10T'
     )
@@ -113,9 +140,25 @@ for satellite in satellites:
     eval_data.to_csv(eval_file_path, index=False)
     print(f"Evaluation data for {satellite} saved to {eval_file_path}")
 
+
+# Generate and save prediction datasets for each satellite
+for satellite in satellites:
+    prediction_data = generate_satellite_prediction_data(
+        start_time="2024-03-01 00:00:00",  # Start time for prediction data (can be adjusted)
+        num_records=200,  # Number of records per satellite
+        freq='10T'  # Time frequency
+    )
+
+    # Save prediction data to CSV (without Category)
+    prediction_file_path = f"{prediction_dir}/{satellite}_prediction_data.csv"
+    prediction_data.to_csv(prediction_file_path, index=False)
+    print(f"Prediction data for {satellite} saved to {prediction_file_path}")
+
 # Output confirmation of file paths
 training_files = [f"{train_dir}/{satellite}_training_data.csv" for satellite in satellites]
 evaluation_files = [f"{eval_dir}/{satellite}_evaluation_data.csv" for satellite in satellites]
+prediction_files = [f"{prediction_dir}/{satellite}_prediction_data.csv" for satellite in satellites]
 
 print("Training Files:", training_files)
 print("Evaluation Files:", evaluation_files)
+print("Prediction Files:", prediction_files)

@@ -462,12 +462,8 @@ G
 +StateAnalysis /new_satellite_data/59020.csv,1/d/1d729f043201a57df8a96127ada471e4141b5436
 I
 StateAnalysis /train01.py,a/1/a191d551e07b9db72d73f1502b2c8d47f0648813
-H
-StateAnalysis01/train.py,a/2/a27cdefa21730169ccdd4331c95c763a10996597
 P
  SatMotion/原始数据/10489.csv,d/c/dc05ac5782cf57a8aa12201fe11af6c0f8f1c08e
-W
-'StateAnalysis01/test_satellite_data.csv,5/1/51fda7fafd8627096c7a4c28207851c0321f8922
 P
  StateAnalysis01/generate_data.py,f/8/f830057b7586055d8918916366e80d93159013f0
 o
@@ -478,3 +474,345 @@ h
 8StateAnalysis01/train_data/Satellite_B_training_data.csv,f/5/f51008458b551c0a6d58a224ae6fdcec296ab2a9
 h
 8StateAnalysis01/train_data/Satellite_D_training_data.csv,6/6/6632e8c857d03d44ca3df007244c4e5c405ce1e4
+L
+SatMotion/cnn_data/44231.csv,d/1/d1f3409ce3a552e63f2fff103f560bce5bcc82f4
+L
+SatMotion/cnn_data/45807.csv,a/3/a3f51985de234c04b1b08bec3c748e9020c6157f
+L
+SatMotion/cnn_data/54219.csv,3/6/367a29a813f85bd9452e0366cb0881280ab1dae6
+L
+SatMotion/cnn_data/55264.csv,a/5/a5f35ab93325b5094665ddbcd85287d2868e0dcc
+L
+SatMotion/cnn_data/11676.csv,c/3/c3d4c3d0ba175b1113c4197411b4af4b1d12ae5e
+L
+SatMotion/cnn_data/11708.csv,f/c/fcf17731b6efb3fc6ca72d5c93a8f066792ceb3a
+L
+SatMotion/cnn_data/12003.csv,3/f/3fee6330d08f78c64af183b61da19ce972c75dd3
+L
+SatMotion/cnn_data/12120.csv,3/c/3ccd5f0fd7b868fb2b341c438bfe39ceb8459f09
+L
+SatMotion/cnn_data/12371.csv,f/d/fd11dad4d7f9e22b83293a4b5d4ed2ad21eb96d9
+L
+SatMotion/cnn_data/12447.csv,0/0/009038bf70fb87e4b8bbf548ffdd0e646d086214
+L
+SatMotion/cnn_data/28912.csv,f/2/f22cc3cf5b5b107c315bd8c93e95aa24cc68d0d8
+L
+SatMotion/cnn_data/36868.csv,4/f/4fb50d71f70af4a009aab4e2f7de14d4afe6adc7
+L
+SatMotion/cnn_data/38091.csv,f/b/fbb0c7690d0b86b7b9afce213f0e582c2dd55162
+L
+SatMotion/cnn_data/39070.csv,3/0/3006adb016aa255c899eaaa3af14e92ed3c78171
+L
+SatMotion/cnn_data/39504.csv,c/e/ce4e9f60b88a8dca0ccf4a52aa7397a2c7939f86
+L
+SatMotion/cnn_data/40732.csv,4/8/4804b9586ef478cddc96e918c6c027b340039a2f
+L
+SatMotion/cnn_data/41469.csv,4/3/439264aaa467e89a44b6442ac7bd1c37a4f3d616
+L
+SatMotion/cnn_data/42917.csv,a/2/a2a1fcc086974b83716bea874e73e43a659f6734
+L
+SatMotion/cnn_data/43683.csv,4/4/4463e4c362ec685a0da124f0012ea6392d772b1f
+L
+SatMotion/cnn_data/10792.csv,4/e/4e8abc1efb655061f56a4480652add95cf80674c
+L
+SatMotion/cnn_data/11273.csv,8/7/87425ffdb577ef35b83b54b0ef4a9bc14c46f4ff
+L
+SatMotion/cnn_data/11484.csv,5/5/552bc126aa44f0301e89d9b4cd7118e61ca5567a
+L
+SatMotion/cnn_data/11567.csv,b/a/ba34893b2ccd1687302cdcb367e73fe6669a60a4
+L
+SatMotion/cnn_data/11648.csv,2/0/20115f8113d29f8003260cc3a489a82518918de8
+L
+SatMotion/cnn_data/11669.csv,5/9/59b446986f46f8036f2803a99fa4e0bb8a2a61af
+[
++StateAnalysis /predicted_control_states.csv,7/5/75090fa4297abc57532c842cc46a61aa16535f0f
+L
+StateAnalysis /pca_model.pkl,f/6/f66c9e8b086387b59e46f0bf487ff1fe69838ae1
+�
+USatMotion/CNN+LSTM+ATTENTION 双输入/.idea/inspectionProfiles/profiles_settings.xml,8/c/8c3a3651292f7608b380af42c7dbfac0e260ad3a
+P
+ SatMotion/saved_model/scaler.pkl,a/f/af194214d2b808a23196dc348f15536812e83f09
+W
+'SatMotion/saved_model/label_encoder.pkl,a/6/a6a62d0fab5142efa40f2361970c19f84e170be4
+R
+"SatMotion/new_data_predictions.csv,e/0/e0fbff9d972e25572ecd4579475ef38b9faac07d
+�
+USatMotion/CNN+LSTM+ATTENTION 单输入/.idea/inspectionProfiles/profiles_settings.xml,2/e/2e0ab60029642571fd6ca28a44cf2c2530c90907
+P
+ SatMotion/predict_data/28912.csv,7/0/70c6e45f5a37efc1065157e8436f69f4ae0ace14
+P
+ SatMotion/predict_data/36868.csv,1/a/1a836adf45a61e6d02defa3d2fccd780d2a87936
+P
+ SatMotion/predict_data/38049.csv,7/1/71092deaec48d004c7af88a9522583c6dd7c2cd9
+P
+ SatMotion/predict_data/38091.csv,a/8/a88057898a978f9e5a4f033698116e784d2074c3
+P
+ SatMotion/predict_data/39070.csv,b/a/ba5c5e88e47411c70dc8328080044be0f3040446
+P
+ SatMotion/predict_data/39504.csv,6/9/69635dfd7ab9acf3704ec0df96b8cca33f0b208f
+P
+ SatMotion/predict_data/40732.csv,8/9/894e3b446ae8467469fb72dd08baae1987dbddc0
+P
+ SatMotion/predict_data/41469.csv,f/7/f7ce8cdb57746b0dd42aaedeb9257a07cd4c433f
+P
+ SatMotion/predict_data/42917.csv,3/a/3ab718379b9ecab89cce8fa33f9ff7dd121a9bf9
+P
+ SatMotion/predict_data/43683.csv,5/2/521084aafbcd7065f59a47dbd965870c5e089849
+P
+ SatMotion/predict_data/44231.csv,e/4/e40c35de1b7c768dc39ce66853b6005d21c9a2be
+P
+ SatMotion/predict_data/45807.csv,5/1/51a88d4bc0928ac2fba079e7df1f6da68518e56c
+P
+ SatMotion/predict_data/54219.csv,6/0/603e505a710e67755e152333506d3e184079cadc
+P
+ SatMotion/predict_data/55264.csv,b/3/b347d896104decb8cca417509c77158bbc5123b2
+P
+ SatMotion/predict_data/59020.csv,e/7/e7118c9c3fcbdf69bac1068e8bc1e22e15751f0f
+N
+SatMotion/train_data/10489.csv,1/b/1be219fb374a675a8fdd23d84b97d2fad16c42d7
+N
+SatMotion/train_data/10792.csv,5/b/5b02d6c3046ba28897658dc614b53dddf58b4d1d
+N
+SatMotion/train_data/11273.csv,b/5/b5d151ee52a441babc9a93bdb47988aa456e2319
+N
+SatMotion/train_data/11484.csv,6/d/6d323a121f683c52e9caca03df7d0a4974972cbc
+N
+SatMotion/train_data/11567.csv,3/f/3f36bbc6b29b3fa468271b1004bb88c6f9903a2c
+N
+SatMotion/train_data/11571.csv,e/1/e17a2a08bccfde309c9f3c7528c13765145f5f1d
+N
+SatMotion/train_data/11648.csv,8/c/8cac70f775a54e26414c963272106ef4372337bd
+N
+SatMotion/train_data/11669.csv,9/4/94142bb90d3db329a293f3de2c25889668922a0b
+N
+SatMotion/train_data/11676.csv,0/4/040c5c89c58b6f1d6706cab86eba9464a45953e3
+N
+SatMotion/train_data/11708.csv,5/5/559d460e10ba4e637376d882eea7e0f7d427452b
+N
+SatMotion/train_data/12003.csv,4/d/4d2acac3dd4de562ad0be0aa71855d06436e2210
+N
+SatMotion/train_data/12120.csv,c/f/cfac8a6eb6b0d345c8a4d5b3003533e2b6ceacbd
+N
+SatMotion/train_data/12371.csv,5/8/58a5e50efd56a818f19b797b1cee7a8204f4ebec
+P
+ StateAnalysis01/requirements.txt,6/f/6f5a05321612d1c3bec87fbe90a5c82487b2c425
+S
+#StateAnalysis /train_data/41469.csv,2/b/2bfbc862d771ed7341d67de0c2652603caa8e62c
+S
+#StateAnalysis /train_data/42917.csv,1/b/1bcee83016d279c6577323a6f618a86ba50aa283
+S
+#StateAnalysis /train_data/43683.csv,9/4/94f83f479c34dc9b6b1102001a45cb1ede5ac865
+S
+#StateAnalysis /train_data/44231.csv,d/2/d2774e96adaec030ddf523bbd4b6c7cb3e84844a
+S
+#StateAnalysis /train_data/45807.csv,1/4/14cea283aa28cfe2646bf0218235747a37f79bbd
+S
+#StateAnalysis /train_data/54219.csv,6/2/62919c8f5df9513fed559c474f4f0772a023b354
+S
+#StateAnalysis /train_data/55264.csv,f/6/f653a5e065271b49cb7ae7a85831a2df0ddd9acd
+S
+#StateAnalysis /train_data/59020.csv,9/e/9e51030508ebf3ba590dfb9e0043b379c6ae5359
+S
+#StateAnalysis /train_data/11571.csv,d/1/d1946bda69e9fecf6fd69c2dede9299cdbff4b1c
+S
+#StateAnalysis /train_data/11648.csv,b/9/b95e4393547adb2085e477be38fdd23dd039d4e7
+S
+#StateAnalysis /train_data/11669.csv,d/7/d7a7f14b21aa3556188f51e9e132e33b9ca11413
+S
+#StateAnalysis /train_data/11676.csv,c/b/cb23cba0f361a071dfa3d8e172871c7e51d63ea8
+S
+#StateAnalysis /train_data/11708.csv,0/3/03f21c0e48ef5e0d4a000e9fddff6fb9bba23f12
+S
+#StateAnalysis /train_data/12003.csv,c/4/c4ca48e488d7bf417bc8ad55875dac98a3bfd61d
+S
+#StateAnalysis /train_data/12120.csv,4/8/482f025c94d2d3c943646d14a4b72a15a96b1fb1
+S
+#StateAnalysis /train_data/12371.csv,9/f/9f74ca24c2485687d9d925e7a38a915830228a65
+S
+#StateAnalysis /train_data/12447.csv,f/7/f713de3a58adfe3d895e84e45ca8e580e87bc8f5
+S
+#StateAnalysis /train_data/28912.csv,4/1/41c6efc80324cb68856b7b29c334c0e03993945f
+S
+#StateAnalysis /train_data/36868.csv,6/3/63c7b784512766fe319084e71bbf0ecf47d8e1c4
+S
+#StateAnalysis /train_data/38049.csv,0/0/00cb329ad2196467424695c5af22e5623281febb
+S
+#StateAnalysis /train_data/38091.csv,b/b/bbee958d17088a9994e23471cc784b65f9f1586f
+S
+#StateAnalysis /train_data/39070.csv,5/3/53145adbe5635b467d76413f38950646af5ae040
+S
+#StateAnalysis /train_data/39504.csv,6/4/6463e55bc7e0613014b11793309db189f6157d80
+S
+#StateAnalysis /train_data/40732.csv,9/1/91fc75ff7f745244c99f8818fea83844cf5378d2
+[
++SatMotion/原始数据/36868_N8_slope30.csv,4/e/4e3082ff727e8262df35e82fecad7172cb027aeb
+[
++SatMotion/原始数据/38049_N8_slope30.csv,8/8/882a7d3085c7074632ab2a921ddfa830fd4cae91
+[
++SatMotion/原始数据/39504_N8_slope30.csv,8/a/8ac88a7ac77ad3215f1b87f80f1a3f8a415f8a72
+[
++SatMotion/原始数据/42917_N8_slope30.csv,c/5/c506a60f942f8a5ebacddd206275cca9a2e45d52
+[
++SatMotion/原始数据/43683_N8_slope30.csv,1/1/11d3bf59d0f928ad156726d246d8f762ac768ae3
+[
++SatMotion/原始数据/44231_N8_slope30.csv,c/c/cc6dfcbcfcaa65d61615a5547567eb34d61efb65
+S
+#StateAnalysis /train_data/10294.csv,7/2/7245a898d4f9eeecae99e3575482e0f50fef2071
+[
++SatMotion/原始数据/45807_N8_slope30.csv,e/9/e9e29e0b0f3d330fae86c7788481bae85ec64e78
+S
+#StateAnalysis /train_data/10489.csv,c/5/c57c9b493c33b2e5ffa5f0bafc2f208df8f9b3bb
+S
+#StateAnalysis /train_data/10792.csv,a/0/a0341b8c07e4a5be67d2fc5ed6718cfff1946a76
+[
++SatMotion/原始数据/55264_N8_slope30.csv,0/e/0ef17bd3d701de455c8a5ce15435dd0812e89e0e
+S
+#StateAnalysis /train_data/11273.csv,e/a/ea6ee86da62a7ebabf99f29e98dc784bb318ac91
+S
+#StateAnalysis /train_data/11484.csv,0/9/09db0e4cf298bdc842847fd0d40183426e5f9bce
+S
+#StateAnalysis /train_data/11567.csv,b/b/bb1f058b73fc67981cf76dc54154951329c465bc
+P
+ SatMotion/原始数据/10792.csv,5/7/5704fa967408897aeb3174144406ae4868840aea
+P
+ SatMotion/原始数据/11273.csv,3/9/393e7033f0ae11eb5aa5099e7971b0d75da633b4
+P
+ SatMotion/原始数据/11484.csv,a/d/ad0195690da4cb7fa29ab8fa694dc74041ce7365
+P
+ SatMotion/原始数据/11567.csv,2/e/2ecbdbc16b846ee1bfbc3bae4ca4be29d9d61f9a
+P
+ SatMotion/原始数据/11571.csv,a/c/ac954ff44db3daf5c59f2489162d46aaf395dcdc
+P
+ SatMotion/原始数据/11669.csv,d/f/df69e4a7ad22aa2163705553868ae92181409082
+P
+ SatMotion/原始数据/11676.csv,2/9/29551e75d95c464a876120b44334f747357495c0
+P
+ SatMotion/原始数据/11708.csv,6/e/6ea1c6b7912f70b26ff3d1b6c9224bfa1af14bb2
+]
+-StateAnalysis /cnn_data/59020_predictions.csv,1/0/10dea91dd15930e885ddce0d49a86fa99cbe063d
+Q
+!StateAnalysis /cnn_data/28912.csv,2/9/2966bdb5ae9c44d2a61ca2d75f19597fbab6d892
+Q
+!StateAnalysis /cnn_data/36868.csv,3/c/3c1f602a32e06f903a95e657841db3a41e728f6b
+Q
+!StateAnalysis /cnn_data/38049.csv,2/9/29e6bcc504676e7bdceffd21916dca4fe83e5ce1
+Q
+!StateAnalysis /cnn_data/38091.csv,d/5/d500726273e89affcb8b409d5dd664152ae84488
+Q
+!StateAnalysis /cnn_data/39070.csv,9/9/99f5dcd056b3171538bb491b043406ec84d5b9be
+Q
+!StateAnalysis /cnn_data/39504.csv,c/f/cf424b07b403db289c9529f3bfcc3dfb4e23e269
+Q
+!StateAnalysis /cnn_data/40732.csv,9/1/91cdaf9868f658d694b3c775915a9b3fad88e98c
+Q
+!StateAnalysis /cnn_data/41469.csv,0/7/0712caf95990e3b24360180f1d143203d18e704c
+Q
+!StateAnalysis /cnn_data/42917.csv,3/f/3f5c2e074553e9dad14b803948cc1645ee7e7039
+Q
+!StateAnalysis /cnn_data/43683.csv,9/b/9bbb0c437d300782efec26aca8bed254ec9043c4
+Q
+!StateAnalysis /cnn_data/44231.csv,9/8/989566d1575251b05d81598c0b38a3632a56570b
+Q
+!StateAnalysis /cnn_data/45807.csv,f/1/f1dee87c969085c95e23567e19feb62d3eddaef3
+Q
+!StateAnalysis /cnn_data/54219.csv,1/d/1dc56f1d49b46ccd38dd1b304af56c2597e48e10
+Q
+!StateAnalysis /cnn_data/55264.csv,5/4/5446a76268da719fc2cdea3f166dbc3e6b90d7f8
+Q
+!StateAnalysis /cnn_data/59020.csv,e/3/e3b35e700caa5be61130c6b3dee2d4fdecef48a8
+]
+-StateAnalysis /cnn_data/11571_predictions.csv,6/e/6e842b7bdd8f9142ac32cd6e4c8c20fec9d2b203
+Q
+!StateAnalysis /cnn_data/10294.csv,2/a/2a19a23e1b64c7866739a4918a40e9aad9e2ed51
+Q
+!StateAnalysis /cnn_data/10489.csv,7/e/7efc4f9785d911710cd2114bb53b0de60671dee9
+Q
+!StateAnalysis /cnn_data/10792.csv,5/7/57f3d9be63bd30d693220be6349094abd504f062
+Q
+!StateAnalysis /cnn_data/11273.csv,2/3/23f3cbae958ab8c1e9d4c8f520a5c14035c55cc5
+Q
+!StateAnalysis /cnn_data/11484.csv,c/3/c34c1948455e47fcc3e5bea83b86339d391b1eeb
+Q
+!StateAnalysis /cnn_data/11567.csv,7/d/7d281a7e7da0adf2389f93ea9e206eebab7d543b
+Q
+!StateAnalysis /cnn_data/11571.csv,a/3/a32bc4c7893adbdd2e23ed2fd7b1dc0f4a676f79
+Q
+!StateAnalysis /cnn_data/11648.csv,4/4/444c436a2c098ffa37fc2786cb8f2bb692e9cacc
+Q
+!StateAnalysis /cnn_data/11669.csv,1/8/18b546996d61a6cd34f3d8d779572dec8aaa5da7
+Q
+!StateAnalysis /cnn_data/11676.csv,9/c/9c00efd5c76a9977cc03e87be526f183ffd257e1
+Q
+!StateAnalysis /cnn_data/11708.csv,8/2/8253f58e2b6dd15256486d82234d355b05dd7baa
+Q
+!StateAnalysis /cnn_data/12003.csv,d/b/db86d38b1b8ee4d7301c87174ab2172b10bccae6
+Q
+!StateAnalysis /cnn_data/12120.csv,8/7/875fff90fb11594d15b5f52c6404e1c35e6ce37e
+Q
+!StateAnalysis /cnn_data/12371.csv,4/d/4dfa0a0f874c332ac96d9eaa5f49366f332da22b
+Q
+!StateAnalysis /cnn_data/12447.csv,4/2/42b22535a473080ecfac1dca07ff4350decc72d6
+X
+(SatMotion/cnn_data/59020_predictions.csv,d/3/d31cc92d48f1ebb2c3342804fafe5a69886afcac
+A
+AI/prj1/testA.csv,9/7/9792d3c96113ddd9603c5c982a6b268221730719
+A
+utils/yolov5su.pt,4/b/4b733506f0f8fcc385ea5f5b3fd9321ed6b70a85
+T
+$StateAnalysis01/predictAndEvaluation,6/8/68ab196c9a0b04c614f5bcfa4c86b18f04a367f0
+T
+$StateAnalysis02/train_data/12447.csv,d/a/da949a59983cb9410aa8ac70bf4a1305e4406631
+T
+$StateAnalysis02/train_data/10489.csv,7/5/759844045b8fb9d96e16a492ba49550c80bd31a4
+T
+$StateAnalysis02/train_data/10294.csv,8/6/8681b86c6577f2e373e96a1cbac47fc7179cbba8
+Y
+)StateAnalysis02/evaluation_data/39504.csv,7/d/7deccb81de33169bf725483509beee01c9102252
+Y
+)StateAnalysis02/evaluation_data/42917.csv,d/6/d641a88ac46dce51440d88993ff77236c0eaf095
+Y
+)StateAnalysis02/evaluation_data/59020.csv,6/3/63ecb10d419613ef842ddf3390bade9747d8bfab
+L
+SatMotion/cnn_data/38049.csv,0/a/0afe7ca98ea02e5cc2a2a51c9b6ff57f041bfd5e
+T
+$StateAnalysis01/train_data/12447.csv,e/c/ec06cceee4e28843cd7db6837126798666ea56de
+Y
+)StateAnalysis02/evaluation_data/28912.csv,9/f/9fea17e2eabf74b83e43d953d3ccd6e36e4b75c0
+T
+$StateAnalysis01/train_data/10294.csv,c/d/cd72e4aab6774337c88e8a6b22d10f3d0fe1540e
+Y
+)StateAnalysis01/prediction_data/28912.csv,7/4/7489876eed002215d3752d8d6fd1238ac89d96a1
+Y
+)StateAnalysis01/prediction_data/10294.csv,c/f/cf46569c96e1f71cb3701916c9e579b31dcce4a3
+j
+:StateAnalysis01/prediction_data/28912_with_predictions.csv,5/a/5a0966bd5bc1d77e5f6f5931fbd090cc706eacb1
+I
+StateAnalysis_V2/train.py,3/4/34951faf2bd4d47eb99c9d3f03e82680bd276623
+Z
+*StateAnalysis_V2/evaluation_data/28912.csv,2/9/2924c43195accf25e8ddc6ae3f766edee63b327d
+Z
+*StateAnalysis_V2/prediction_data/28912.csv,d/7/d7f82cc043c8cfe62b55117cf10917b0eaa71110
+V
+&StateAnalysis_V2/saved_model/28912.csv,d/e/dee6475eec9a926fc828ee5930ee8527b0026cff
+k
+;StateAnalysis_V2/prediction_data/28912_with_predictions.csv,d/3/d308052eb90e303f160a40f76e1bd9a960242363
+K
+StateAnalysis_V2/predict.py,d/1/d1bef193a76d74785d1c9d6a57cd548ccbddffec
+K
+StateAnalysis01/train_01.py,0/f/0fa877a603aafe275a94e156a28b2512757f5e2d
+T
+$StateAnalysis01/generate_data_new.py,9/4/94e4f35908a9221ecca83afab70b48c7b2483d89
+o
+?StateAnalysis01/prediction_data/Satellite_A_prediction_data.csv,9/a/9afcd46797eb4ea624073051ddd644e6aed844bc
+o
+?StateAnalysis01/prediction_data/Satellite_B_evaluation_data.csv,b/2/b232f196be42a59b9b411ee1d2d4ec55720ad259
+L
+StateAnalysis01/train_new.py,8/3/8312f2b246cc38813e4e1b118cd870f9b46ceba4
+G
+StateAnalysis_V2/st1.py,c/0/c09f37edf4175fa4ee4fa83c4713390e01d123d5
+Y
+)StateAnalysis_V2/satellite_orbit_data.csv,7/e/7e5816893b500cb6e794d4b2253d0fa072040dcb
+Q
+!StateAnalysis_V2/data_generate.py,9/4/940c4242c7f4617140902335ee258b8c5e62db95
+H
+StateAnalysis_V2/test.py,4/9/497bedd6074eb43e9ba90c553368e6ba03d7fb1d
