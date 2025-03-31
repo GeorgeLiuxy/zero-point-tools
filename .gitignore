@@ -35,3 +35,17 @@ AI/diffusionGan/visible_images/
 /scapers/example_spider/example_spider/build/
 /venv/
 /wechat/.wechaty/
+*.txt
+*.log
+*.log*.log*.log
+*.keras
+scapers/result/housing rights/*.txt
+scapers/result/housing rights/*.log
+scapers/result/housing rights/*.err
+StateAnalysis/data/*
+StateAnalysis/train_data/*
+StateAnalysis/evalulate_data/*
+StateAnalysis/test_data/*
+
+
+

@@ -18,11 +18,11 @@ np.random.seed(42)
 tf.random.set_seed(42)
 
 # 目录设置
-train_data_dir = "./train_data/"
+train_data_dir = "./new_train_data/"
 eval_data_dir = "./evaluation_data/"
 predication_data_dir = "./prediction_data/"
 scaler_path = './saved_model/scaler.pkl'
-model_save_path = "./saved_model/satellite_model_v2.keras"
+model_save_path = "./saved_model/satellite_model_v3.keras"
 scaler_save_path = "./saved_model/scaler.pkl"  # 保存scaler的路径
 os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
 
@@ -247,9 +247,9 @@ def evaluate_model(file_name):
 # 选择是否进行训练或者评估
 if __name__ == "__main__":
     # # 训练模型：如果需要训练模型，则取消下面的注释
-    # train_model(f'{train_data_dir}10294.csv')
+    # train_model(f'{train_data_dir}14899new.csv')
 
     # 加载模型并进行评估：如果已经训练过模型且要评估，取消下面的注释
-    evaluate_model(f'{eval_data_dir}28912.csv')
+    evaluate_model(f'{train_data_dir}16526new.csv')
 
 

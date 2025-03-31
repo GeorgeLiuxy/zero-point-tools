@@ -20,7 +20,7 @@ tf.random.set_seed(42)
 # 目录设置
 train_data_dir = "./train_data/"
 eval_data_dir = "./evaluation_data/"
-model_save_path = "./saved_model/satellite_model_v2.keras"
+model_save_path = "./saved_model/satellite_model_v4.keras"
 os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
 
 # 数据预处理函数
