@@ -1,0 +1,31 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL注入检测系统</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input, textarea { width: 100%; padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+        .result { margin-top: 20px; font-weight: bold; font-size: 18px; }
+    </style>
+</head>
+<body>
+<h2>基于深度学习的SQL注入检测系统</h2>
+<form method="post">
+    <label for="sql_input">请输入SQL语句：</label><br>
+    <textarea name="sql_input" rows="4" required>{{ sql_input if sql_input else '' }}</textarea>
+
+<!--    <textarea name="sql_input" rows="4" required>{{ request.form['sql_input'] if request.method == 'POST' else '' }}</textarea><br>-->
+    <button type="submit">检测</button>
+</form>
+
+{% if result %}
+<div class="result">
+    检测结果：<span style="color: {{ 'red' if result == '注入攻击' else 'green' }}">{{ result }}</span><br>
+    置信度：{{ confidence }}%
+</div>
+{% endif %}
+</body>
+</html>

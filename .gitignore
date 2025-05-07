@@ -49,3 +49,28 @@ StateAnalysis/test_data/*
 
 
 
+/sql_injection_app.zip
+/sql_injection_app 2.zip
+/weather_forecast/split_nc_file/target/
+/wechat/newclip2001-2010.zip
+/wechat/newclip2011-2020.zip
+/StateAnalysis02/evaluation_data/
+/StateAnalysis02/train_data/
+/StateAnalysis01/evaluation_data/
+/StateAnalysis01/prediction_data/
+/StateAnalysis01/train_data/
+/StateAnalysis /cnn_data/
+/StateAnalysis /train_data/
+/sql_injection_app/myvenv/lib/
+/sql_injection_app/myvenv/
+/scapers/example_spider/build/
+/scapers/example_spider/build/lib/
+/scapers/example_spider/example_spider/build/
+/scapers/example_spider/example_spider/dist/
+/SatMotion/CNN+LSTM+ATTENTION 单输入/
+/SatMotion/CNN+LSTM+ATTENTION 双输入/
+/SatMotion/cnn_data/
+/SatMotion/predict_data/
+/SatMotion/saved_model/
+/other/
+/chrome-ext/
