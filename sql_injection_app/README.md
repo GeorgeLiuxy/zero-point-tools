@@ -52,7 +52,7 @@ python app.py
 
 以下 SQL 可用于验证系统是否正常运行及模型效果：
 
-### ✅ 安全语句（应识别为正常）
+###  安全语句（应识别为正常）
 
 ```sql
 SELECT * FROM users WHERE username = 'alice' AND password = 'mypassword'
@@ -78,10 +78,10 @@ SELECT * FROM users WHERE username = 'admin' OR '1'='1' --
 
 ## 🧰 功能亮点
 
-- ✅ 多平台兼容（Mac / Windows / Linux）
-- ✅ 禁用 tokenizer 并发，防止资源泄漏（Mac 安全支持）
-- ✅ 模型与前端完全解耦，便于二次开发
-- ✅ 可扩展风险解释模块（匹配注入类型）
+-  多平台兼容（Mac / Windows / Linux）
+-  禁用 tokenizer 并发，防止资源泄漏（Mac 安全支持）
+-  模型与前端完全解耦，便于二次开发
+-  可扩展风险解释模块（匹配注入类型）
 
 ---
 

@@ -32,14 +32,14 @@ def load_model_and_tokenizer():
 
         model = model.to("cpu")
         model.eval()
-        logger.info("✅ 模型加载成功，已切换至 CPU 模式")
+        logger.info(" 模型加载成功，已切换至 CPU 模式")
         return tokenizer, model
 
     except Exception as e:
         logger.error(f"❌ 模型加载失败：{e}")
         raise RuntimeError("模型加载失败，请检查网络连接或模型路径。")
 
-# ✅ 初始化模型（仅加载一次）
+#  初始化模型（仅加载一次）
 tokenizer, model = load_model_and_tokenizer()
 
 # ==================== 检测函数 ====================

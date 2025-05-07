@@ -47,7 +47,7 @@ def match_label_with_template(image_path, template, result_path='match_result.pn
 
     # 打印结果
     for field, (matched, matched_text) in match_results.items():
-        status = '✅ 匹配' if matched else '❌ 不匹配'
+        status = ' 匹配' if matched else '❌ 不匹配'
         print(f"{field}: {status} - 识别内容: {matched_text}")
 
     cv2.imwrite(result_path, image)

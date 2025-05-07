@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>天气地图</title>
+  <!-- Bootstrap core CSS-->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="/static/css/sb-admin.css" rel="stylesheet">
+  <style>
+      #map {
+          width: 800px;
+          height: 600px;
+          margin: 0 auto; /* 居中 */
+        }
+  </style>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+   {% include 'navbar.html' %}
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">地图</li>
+      </ol>
+{#        地图容器#}
+    <div class="col-lg-12">
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-area-chart"></i> 中国地图热力图
+            <select id="dataSelector" onchange="updateChart()">
+                            <option value="温度">温度</option>
+                            <option value="体感温度">体感温度</option>
+                            <option value="风力等级">风力等级</option>
+                            <option value="湿度">湿度</option>
+                            <option value="能见度">能见度</option>
+                        </select>
+          </div>
+          <div class="card-body">
+            <div id="map" style="width: 800px; height: 600px;"></div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>flask+mysql天气数据分析系统</small>
+      </div>
+    </div>
+  </footer>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">真的要退出系统了吗？</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+          <a class="btn btn-primary" href="/loginOut">确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="/static/js/sb-admin.min.js"></script>
+  <script src="../static/js/echarts.min.js"></script>
+  <script src="../static/js/map/china.js"></script>
+  <script src="../static/js/map/province/beijing.js"></script>
+
+  <script>
+    function updateChart() {
+    var selector = document.getElementById('dataSelector');
+    var selectedDataType = selector.value; // 获取选择的数据类型，如'温度'
+
+    // 更新地图数据
+    myChart.setOption({
+        series: [{
+            data: Object.keys(temperatureData).map(function(city) {
+                return {
+                    name: city,
+                    value: temperatureData[city][selectedDataType],
+                    selected: false
+                };
+            })
+        }],
+        visualMap: {
+            min: selectedDataType === '湿度' ? 0 : -10,
+            max: selectedDataType === '湿度' ? 100 : 40,
+            left: 'left',
+            top: 'bottom',
+            text: ['高', '低'],
+            calculable: true
+        }
+    });
+}
+    // 获取后端传递的温度数据
+    var temperatureData = JSON.parse('{{ temperatureData | safe }}');
+
+    // 初始化 ECharts 实例
+    var myChart = echarts.init(document.getElementById('map'));
+
+    // 配置热力地图
+    var option = {
+      tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove', // 只有当鼠标移动到省份上时才触发提示框
+        formatter: function (params) {
+        var cityName = params.name;
+        var weatherInfo = temperatureData[cityName] || {};
+        var tooltipContent = cityName;
+        tooltipContent += weatherInfo['温度'] ? ': 温度 ' + weatherInfo['温度'] + '℃' : '';
+        tooltipContent += weatherInfo['体感温度'] ? '\n, 体感 ' + weatherInfo['体感温度'] + '℃' : '';
+        tooltipContent += weatherInfo['天气情况'] ? '\n, 天气 ' + weatherInfo['天气情况'] : '';
+        tooltipContent += weatherInfo['风力等级'] ? '\n, 风力 ' + weatherInfo['风力等级'] : '';
+        tooltipContent += weatherInfo['湿度'] ? '\n, 湿度 ' + weatherInfo['湿度'] + '%' : '';
+        tooltipContent += weatherInfo['能见度'] ? '\n, 能见度 ' + weatherInfo['能见度'] + 'km' : '';
+        return tooltipContent; // 自定义提示框内容格式
+      }
+      },
+      visualMap: {
+        min: -10,   // 温度最小值
+        max: 40,    // 温度最大值
+        left: 'left',
+        top: 'bottom',
+        text: ['高', '低'],
+        calculable: true
+      },
+      series: [{
+        type: 'map',
+        mapType: 'china',  // 使用中国地图
+        roam: true,        // 允许缩放和拖动
+        label: {
+          show: true
+        },
+        data: Object.keys(temperatureData).map(function (city) {
+          return { name: city, value: temperatureData[city]['温度'], selected: false }; // 确保只传递温度值
+        }),
+        // 选中省份后触发事件
+        selectedMode: 'single',
+        emphasis: {
+          label: {
+            show: true
+          }
+        }
+      }]
+    };
+
+    // 使用刚指定的配置项和数据显示热力地图
+    myChart.setOption(option);
+
+    // 点击事件处理
+    myChart.on('click', function (params) {
+      var selectedProvince = params.name;
+      // 发送 AJAX 请求加载省份对应的城市列表
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var cityData = JSON.parse(xhr.responseText);
+          var cities = cityData[selectedProvince];
+          alert(selectedProvince + '的城市列表：' + cities.join(', '));
+        }
+      };
+      xhr.open('GET', '../spider/province_city.json', true);
+      xhr.send();
+    });
+  </script>
+</body>
+
+</html>

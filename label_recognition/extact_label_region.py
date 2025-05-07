@@ -30,7 +30,7 @@ def extract_label_region(image_path, output_path="cropped_label.png"):
     # 7. 裁剪标签区域
     cropped = image[y:y+h, x:x+w]
     cv2.imwrite(output_path, cropped)
-    print(f"✅ 标签区域已保存为：{output_path}")
+    print(f" 标签区域已保存为：{output_path}")
 
     return output_path
 

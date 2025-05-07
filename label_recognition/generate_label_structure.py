@@ -37,4 +37,4 @@ for line in ocr_result[0]:
 with open("food_label_structure_normalized.json", "w", encoding="utf-8") as f:
     json.dump(normalized_structure, f, ensure_ascii=False, indent=2)
 
-print("✅ 模板结构提取完毕，已保存为 JSON 文件：food_label_structure_normalized.json")
+print(" 模板结构提取完毕，已保存为 JSON 文件：food_label_structure_normalized.json")
