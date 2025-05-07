@@ -1,7 +1,7 @@
 from pymysql import *
 
 # 设置数据库连接信息
-conn = connect(host='localhost', user='root', password='123456', database='tianqi', port=3306)
+conn = connect(host='localhost', user='root', password='Aa12345678', database='tianqi', port=3306)
 cursor = conn.cursor()
 
 
