@@ -167,6 +167,18 @@ zero-point-tools/
 └── utils/                      # PDF、图片等通用工具
 ```
 
+## 子项目 README 导航
+
+| 方向 | 子项目说明 |
+| --- | --- |
+| AI 与算法 | [AI 总览](AI/README.md)、[多智能体预测](AI/agent_prediction/README.md)、[图像融合原型](AI/Diffusion_GAN/README.md)、[Diffusion-GAN 融合](AI/diffusionGan/README.md)、[MNIST GAN](AI/image_generete/README.md)、[PPO 连续控制](AI/mountain_bike/README.md)、[商户推荐](AI/prj1/README.md)、[学习实验](AI/study/README.md) |
+| 卫星与时序 | [SatMotion](SatMotion/README.md)、[StateAnalysis01](StateAnalysis01/README.md)、[StateAnalysis02](StateAnalysis02/README.md)、[StateAnalysis_V2](StateAnalysis_V2/README.md)、[销售预测](student_study/README.md) |
+| NLP 与安全 | [SQL 注入检测应用](sql_injection_app/README.md)、[SQL 检测占位工程](sql_injection_detection/README.md)、[BERT 分类实验](Optimization_prjs/README.md) |
+| 视觉与生成 | [标签 OCR](label_recognition/README.md)、[轮廓测量](measure_pairs/README.md)、[Zero123++](zero123plus-main/README.md) |
+| 自动化与采集 | [安居客断点版](anjuke_phone_scraper/README.md)、[安居客多版本](webscraper/README.md)、[采集实验总览](scapers/README.md)、[在线课程自动化](auto_video_study/README.md)、[移动登录自动化](chinamobile/README.md)、[微信自动化](wechat/README.md)、[视频下载](video_download/README.md) |
+| 桌面与通用工具 | [远程桌面控制](remote_desktop_controller/README.md)、[浏览器视频扩展](chrome-ext/README.md)、[ASK 音频通信](ASK-Comm/README.md)、[代理接口测试](auto_youtube/README.md)、[Go 微信原型](go-folder/README.md)、[通用工具](utils/README.md) |
+| 归档与第三方工程 | [气象/算法项目索引](code_repair/README.md) |
+
 ## 使用方式
 
 本仓库不是一个统一安装、统一启动的单体应用。建议进入具体子项目后，根据其依赖文件和代码入口单独创建环境。

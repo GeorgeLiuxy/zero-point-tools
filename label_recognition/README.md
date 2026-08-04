@@ -1,75 +1,40 @@
-标签识别程序设计方案
+# 标签 OCR、结构生成与模板比对
 
-一、功能需求
+该目录使用 PaddleOCR、OpenCV 和 Pillow 对产品标签进行文字识别、区域提取、版面结构归一化和模板一致性比对。当前实现由多个独立脚本组成，没有 PyQt/Tkinter 图形界面，也没有使用原设计文档中提到的 Tesseract/SIFT 主流程。
 
-实现对电机、食品等不同类型标签图像的文字内容识别。
+## 主要脚本
 
-支持用户上传标签模板，自动进行标签位置与内容的匹配，判定标签图像与模板的一致性。
+| 文件 | 功能 |
+| --- | --- |
+| `main.py` | 中文 PaddleOCR，输出文字、坐标、置信度和标注图 |
+| `main01.py` | 英文 PaddleOCR，并导出 `识别结果.csv` |
+| `extact_label_region.py` | 通过 OpenCV 轮廓提取标签区域 |
+| `generate_label_structure.py` | 从模板图生成归一化文字框 JSON |
+| `generate_label_structure01.py` | 另一模板结构生成版本 |
+| `comparison_label_model.py` | 将目标标签的归一化框与模板 JSON 比较 |
+| `comparison.py` | OCR 内容/位置匹配和结果绘制实验 |
+| `generate_label_template*.py` | 使用 Pillow 生成带文本和条码的标签样例 |
+| `xxxx.py` | 与 WADI 数据相关的独立实验，不属于标签主流程 |
 
-提供简单易用的交互界面。
+## 安装
 
-二、系统架构
+```bash
+pip install paddleocr paddlepaddle opencv-python pillow pandas numpy
+```
 
-前端交互界面（GUI）：
+PaddlePaddle 的 CPU/GPU 安装包应按操作系统和计算环境选择。首次运行 PaddleOCR 可能下载模型权重。
 
-使用 PyQt 或 Tkinter 构建用户界面，提供直观的操作方式。
+## 运行示例
 
-支持标签图像和模板的导入。
+```bash
+cd label_recognition
+python main.py
+python generate_label_structure.py
+python comparison_label_model.py
+```
 
-实时展示图像、识别结果及匹配信息。
+脚本中的图片、模板 JSON 和输出路径目前为硬编码，运行前需改成实际文件。建议流程为：标签区域裁剪 → OCR → 模板结构生成 → 目标结构比对。
 
-图像预处理模块：
+## 比对说明
 
-基于 OpenCV 实现灰度转换、二值化、降噪等图像预处理。
-
-文字识别模块：
-
-使用 Tesseract OCR 引擎实现标签内文字的自动识别与提取。
-
-模板匹配模块：
-
-使用特征匹配（如SIFT）或模板匹配算法判断标签位置是否正确。
-
-结合OCR结果与模板内容，判定标签内容是否与模板一致。
-
-三、界面设计
-
-主窗口：
-
-按钮：加载标签图片、加载模板图片、开始识别
-
-显示区域：分别显示标签图像、模板图像
-
-结果区域：展示文字识别结果、模板匹配情况（是否匹配、匹配度）
-
-四、工作流程
-
-用户加载标签图片与模板图片。
-
-点击“开始识别”按钮后，程序自动执行以下步骤：
-
-图像预处理（灰度化、二值化、去噪）
-
-OCR文字识别，提取标签内容
-
-标签图像与模板图像进行位置匹配
-
-将识别结果与模板内容进行比对，输出匹配结果
-
-五、技术栈
-
-界面框架：PyQt 或 Tkinter
-
-图像处理：OpenCV
-
-OCR识别：Tesseract OCR
-
-匹配算法：OpenCV中的SIFT特征匹配或模板匹配算法
-
-六、扩展功能（可选）
-
-支持识别历史记录查看
-
-识别结果导出到Excel或PDF
-
-支持多模板管理，自动识别最优匹配模板
+结构比对主要使用归一化文字框位置，能降低不同分辨率的影响，但仍对拍摄角度、透视、旋转、标签变形和 OCR 漏检敏感。生产使用前应补充透视校正、字段级规则、置信度阈值和人工复核机制。
